@@ -7,8 +7,17 @@
   --md-typeset-a-color:         #0097A7;
 }
 
-.md-source__repository {
+.md-source__facts {
   display: none;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--md-primary-fg-color--dark);
 }
 
 /* Material default is .8rem (~16px); bump to match JupyterBook/Sphinx */

@@ -1,5 +1,9 @@
 # Workshop 1: Open-source tools for outreach, teaching and research documentation
 
+Researchers and teachers often want to share their work online — whether that's a personal website, class notes, a book or project documentation — but don't know where to start.
+
+This workshop introduces simple, free tools that make it possible, with no web development experience required. The workshop is not meant to be a comprehensive class on web design, but is rather an opinionated introduction to tools we and others use a lot, with demos and some hands-on time.
+
 !!! tip "Registration / logistics"
 
     When: **19 June 2026**
@@ -16,10 +20,6 @@
 
 ---
 
-Researchers and teachers often want to share their work online — whether that's a personal website, class notes, a book or project documentation — but don't know where to start.
-
-This workshop introduces simple, free tools that make it possible, with no web development experience required.
-
 ## You should come if ...
 
 ... you're interested in creating any of these:
@@ -31,7 +31,7 @@ This workshop introduces simple, free tools that make it possible, with no web d
 - [Educational platforms](https://edu.oggm.org)
 - and more!
 
-The workshop is not meant to be comprehensive: it's an opinionated introduction to tools we and others use a lot, with demos and some hands-on time.
+We expect the workshop to be most beneficial for PGRs and ECRs, but everyone is very welcome!
 
 ---
 

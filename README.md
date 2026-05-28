@@ -38,3 +38,7 @@ You can also deploy manually:
 ```bash
 mkdocs gh-deploy
 ```
+
+## License
+
+Content is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — Bristol Glaciology Centre, University of Bristol.
