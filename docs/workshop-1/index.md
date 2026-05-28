@@ -26,7 +26,7 @@ This workshop introduces simple, free tools that make it possible, with no web d
 
 - [Personal websites](https://trchudley.github.io)
 - [Research group websites](https://bristol-glaciology.github.io/)
-- [Class notes](https://fabienmaussion.info/climate_risks)
+- [Class notes](https://fabienmaussion.info/climate_risks) or [online textbooks](https://trchudley.github.io/geospatial-python-glaciology/).
 - [Tutorials](https://tutorials.oggm.org) or [software documentation](https://pdemtools.readthedocs.io)
 - [Educational platforms](https://edu.oggm.org)
 - and more!
