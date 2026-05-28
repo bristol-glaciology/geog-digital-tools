@@ -30,6 +30,6 @@ Anyone is welcome!
 
 ## Organisers
 
-These workshops are organised by [Fabien Maussion](https://fabienmaussion.info) and [Tom Chudley](https://trchudley.github.io/)) at the [Bristol Glaciology Centre](https://bristol-glaciology.github.io/), School of Geographical Sciences, University of Bristol.
+These workshops are organised by [Fabien Maussion](https://fabienmaussion.info) and [Tom Chudley](https://trchudley.github.io/) at the [Bristol Glaciology Centre](https://bristol-glaciology.github.io/), School of Geographical Sciences, University of Bristol.
 
 Questions or suggestions? Open an issue on [GitHub](https://github.com/bristol-glaciology/geog-digital-tools) or get in touch directly.
