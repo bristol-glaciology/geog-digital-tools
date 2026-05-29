@@ -1,6 +1,6 @@
 # Geog Digital Tools & Infrastructure Series
 
-Source repository for the workshop series website, hosted at https://bristol-glaciology.github.io/geog-digital-tools/
+Source repository for the workshop series website, hosted at <https://bristol-glaciology.github.io/geog-digital-tools/>
 
 Built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
@@ -32,7 +32,7 @@ Open <http://127.0.0.1:8000> in your browser. The site reloads automatically on 
 
 ## Deployment
 
-Pushes to `main` automatically trigger a GitHub Actions build and deploy to GitHub Pages.
+Work happens on `main`. The live site only updates when changes are pushed to the `deploy` branch.
 You can also deploy manually:
 
 ```bash
