@@ -48,8 +48,7 @@ The purpose of part 1 is to provide a general overview of a family of tools whic
     - [MkDocs & Material](https://squidfunk.github.io/mkdocs-material/) — good for software documentation and project websites like this one
     - [Jekyll](https://jekyllrb.com/) — good for fancier personal or project websites
     - Honourable mention: [Sphinx](https://www.sphinx-doc.org) — the venerable and still well-used software documentation tool
-4. Hosting: [GitHub Pages](https://docs.github.com/en/pages) and [ReadTheDocs](https://about.readthedocs.com)
-5. Web analytics: tools and legal aspects (brief overview)
+4. Hosting: [GitHub Pages](https://docs.github.com/en/pages) and [ReadTheDocs](https://about.readthedocs.com), web analytics (brief overview).
 
 *Coffee break (15:00–15:15)*
 
