@@ -2,21 +2,23 @@
 
 Researchers and teachers often want to share their work online — whether that's a personal website, class notes, a book or project documentation — but don't know where to start.
 
-This workshop introduces simple, free tools that make it possible, with no web development experience required. The workshop is not meant to be a comprehensive class on web design, but is rather an opinionated introduction to tools we and others use a lot, with demos and some hands-on time.
+This workshop introduces simple, free tools that make it easy to build professional-looking websites, with no web development experience required. The workshop is not meant to be a comprehensive class on web design, but is rather an opinionated introduction to tools we (and others!) use a lot, with demos and some hands-on time.
 
 !!! tip "Registration / logistics"
 
-    When: **19 June 2026**
-    Where: **Hepple, School of Geographical Sciences, University of Bristol**
-    How: **Please register by filling the form sent by email so we can plan accordingly!**
+    - When: **19 June 2026**
+    - Where: **Hepple, School of Geographical Sciences, University of Bristol**
+    - How: **Please register by filling [this MS form](https://forms.office.com/e/sSfxgz3efs) so we can plan accordingly!**
 
-    | Time  |                                                 |
-    |-------|-------------------------------------------------|
-    | 12:30 | Arrival and lunch (provided pending funding)    |
-    | 13:30 | Workshop starts                                 |
-    | 15:00 | Coffee break                                    |
-    | 16:30 | Workshop ends                                   |
-    | 17:00 | Optional pub visit — School Gemini Drinks       |
+    | Time  |                                                     |
+    |-------|-----------------------------------------------------|
+    | 12:30 | Arrival and lunch (provided)                        |
+    | 13:30 | **Part 1** — Static websites                        |
+    | 15:00 | Coffee break                                        |
+    | 15:15 | **Part 2** — Interactivity, demos & lightning talks |
+    | 15:45 | **Part 3** — Hands-on                               |
+    | 16:30 | Workshop ends                                       |
+    | 17:00 | Optional pub visit — School Gemini Drinks           |
 
 ---
 
@@ -31,7 +33,7 @@ This workshop introduces simple, free tools that make it possible, with no web d
 - [Educational platforms](https://edu.oggm.org)
 - and more!
 
-We expect the workshop to be most beneficial for PGRs and ECRs, but everyone is very welcome!
+We expect the workshop to be most beneficial for PGRs and ECRs, but everyone is very welcome to join!
 
 ---
 
@@ -56,7 +58,7 @@ The purpose of part 1 is to provide a general overview of a family of tools whic
 
 This shorter section isn't about the details, but rather to showcase some concrete applications of the tools mentioned above and additional ones that could make the bulk of a later workshop.
 
-1. Lightning talks from the community: what did you build, or what is your favourite tool you'd like to highlight? Let us know! (use the form to register your contribution)
+1. Lightning talks from the community: what did you build, or what is your favourite tool you'd like to highlight? Let us know! (use the MS form to register your contribution)
 2. If time permits: adding interactivity to your static websites — interactive plots, dashboards, and interactive notebooks.
 
 ### Part 3 — Hands-on (15:45–16:30)
