@@ -1,0 +1,38 @@
+site_name: My Static Website
+site_description: MkDocs / Material for MkDocs Example
+site_url: https://example.com
+repo_url: ""
+repo_name: ""
+
+theme:
+  name: material
+  favicon: assets/favicon.png
+  logo: assets/logo.png
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+
+nav:
+  - Home: pages/index.md
+  - Content & Markdown: pages/content.md
+  - Coding Examples: pages/coding.md
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: "#"
+  - tables
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

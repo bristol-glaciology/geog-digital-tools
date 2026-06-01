@@ -1,0 +1,8 @@
+# Main navigation links
+main:
+  - title: "Home"
+    url: /
+  - title: "Content"
+    url: /content/
+  - title: "Coding"
+    url: /coding/
