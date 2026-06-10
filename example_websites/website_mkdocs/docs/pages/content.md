@@ -4,7 +4,7 @@
 
 Text can be written in **bold** or *italics* and also [made into links](https://bristol-glaciology.github.io/). 
 
-![Example image](assets/images/image.jpg)
+![Example image](../assets/image.jpg)
 
 ## Quotes and Lists
 

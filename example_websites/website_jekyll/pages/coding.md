@@ -7,7 +7,7 @@ author_profile: false
 
 This page demonstrates code and mathematics examples from a Jupyter Notebook.
 
-**Note:** Jekyll cannot directly ingest Jupyter Notebooks (unlike Jupyter Book). Instead, this page is a Markdown representation that displays the code, equations, and descriptions using Markdown code blocks and LaTeX math rendering.
+> **Note:** Jekyll cannot directly ingest Jupyter Notebooks (unlike MySt/Jupyter Book or MkDocs/Material with the `mkdocs-jupyter` extension). Instead, this page is a Markdown representation that displays the code, equations, and descriptions using Markdown code blocks and LaTeX math rendering.
 
 ## Imports
 

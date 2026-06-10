@@ -5,6 +5,4 @@ Hello! This is a very bare-bones example website to show you how you might take 
 Click through to the pages here to explore:
 
 - [Content & Markdown Examples](content.md)
-- [Coding Examples](coding.md)
-
-The coding page demonstrates how different site generators can handle Jupyter Notebook content and mathematical equations.
+- [Jupyter Notebook example](notebook.ipynb)

@@ -8,6 +8,7 @@
 site/
 _site/
 .jekyll-cache/
+_build/
 
 # Python
 __pycache__/

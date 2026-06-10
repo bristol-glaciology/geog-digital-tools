@@ -15,9 +15,9 @@ project:
     - file: pages/intro.md
     - title: Chapters
       children:
-        - file: pages/chapters/coding.ipynb
         - file: pages/chapters/content.md
-    
+        - file: pages/chapters/notebook.ipynb
+
 site:
   template: book-theme
   options:
