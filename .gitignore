@@ -4,8 +4,11 @@
 # VSCode
 .vscode/
 
-# MkDocs build output
+# build output
 site/
+_site/
+.jekyll-cache/
+_build/
 
 # Python
 __pycache__/
