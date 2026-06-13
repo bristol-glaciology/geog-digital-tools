@@ -1,38 +1,86 @@
-# JupyterBook & MyST
+# 3.2 JupyterBook & MyST
 
-!!! note "This page is a stub"
-    Content will be added after the workshop. For now, see the links below.
+[JupyterBook](https://jupyterbook.org/) is a documentation engine specifically tailored to technical and scientific content — code documentation, textbooks, or lecture notes. As the name suggests, it is particularly useful for translating `.ipynb` Jupyter Notebook documents into web pages with no effort on the part of the user. It also accepts LaTeX `.tex` files, and can export your content to a `.pdf` as well as a website.
 
-[JupyterBook](https://jupyterbook.org) is a tool for building publication-quality books and documents from Jupyter Notebooks and Markdown. It uses [MyST Markdown](https://mystmd.org/) — a flavour of Markdown designed for scientific and technical writing.
+As with most examples here, the [JupyterBook website itself](https://jupyterbook.org/) is the primary example of a JupyterBook site, but other examples include [maths-heavy online textbooks](https://notes.eecs245.org/), [online supporting content for written GeoAI textbooks](https://book.opengeoai.org/), or [online working groups for the geoscience community](https://projectpythia.org/).
 
-## When to use it
+!!! note "A note on JupyterBook and MyST"
 
-JupyterBook is a good fit when your content is:
+    When you start using JupyterBook, you will quickly encounter the term [MyST](https://mystmd.org/) (Markedly Structured Text).
 
-- Jupyter Notebooks with outputs you want to display
-- Linear, book-like structure (chapters, sections)
-- Heavy on cross-references, citations, or equations
-- Aimed at teaching or tutorials
+    MyST is the underlying rendering engine, something the user rarely needs to think about — think of it as a 'flavour' of Markdown — that translates your Markdown and Jupyter documents into websites.
 
-## Examples in the wild
+## Getting Started with JupyterBook
 
-- [OGGM tutorials](https://tutorials.oggm.org)
-- [Quantifying Climate Risks (Fabien Maussion)](https://fabienmaussion.info/climate_risks)
-- [OGGM educational platform](https://edu.oggm.org)
-- [The official JupyterBook gallery](https://executablebooks.org/en/latest/gallery/)
+The [JupyterBook documentation](https://jupyterbook.org/stable/get-started/) is very good, but a streamlined version of the workflow is available here.
 
-## Key links
+Building and publishing a JupyterBook site involves the following steps:
 
-- :material-book-open: [JupyterBook documentation](https://jupyterbook.org)
-- :material-book-open: [MyST Markdown documentation](https://mystmd.org)
-- :fontawesome-brands-github: [JupyterBook on GitHub](https://github.com/executablebooks/jupyter-book)
+### 1. Install JupyterBook
 
-## Quick start
+Requires Python. Install the core package using `pip` or `conda`:
 
-```bash
-pip install jupyter-book
-jupyter-book create mybook/
-jupyter-book build mybook/
-```
+~~~bash
+conda install jupyter-book
+~~~
 
-See the [official quickstart guide](https://jupyterbook.org/en/stable/start/your-first-book.html) for a full walkthrough.
+### 2. Initialise a project
+
+Create a new directory for your project, navigate to it in the command line, and initialise your workspace:
+
+~~~bash
+jupyter book init
+~~~
+
+### 3. Edit the `myst.yml` file
+
+Open the newly generated `myst.yml` file in a text editor. This single file controls everything. Fill out your global project variables under the `project:` block (such as `title`, `description`, and `authors`).
+
+### 4. Add content
+
+Create files directly in your project directory. JupyterBook [natively supports](https://jupyterbook.org/stable/authoring/file-types/) regular Markdown (`.md`), Jupyter Notebooks (`.ipynb`), and LaTeX (`.tex`). [MyST-style Markdown](https://jupyterbook.org/stable/authoring/mystmd/) adds further capability, including native support for [LaTeX-style mathematical equations](https://jupyterbook.org/stable/authoring/math/). As your project grows, organise content into folders and keep images in a dedicated assets directory.
+
+### 5. Configure the table of contents
+
+Open your `myst.yml` file again. Use the `toc:` section to define the structure, titles, and nested sections:
+
+~~~yaml
+project:
+  toc:
+    - file: docs/index.md
+    - title: Part I - Foundations
+      children:
+        - file: docs/part1/intro.md
+        - file: docs/part1/basics.md
+    - title: Part II - Advanced
+      children:
+        - file: docs/part2/advanced.md
+~~~
+
+### 6. Build and preview locally
+
+Launch the built-in development server to view the site on your computer. It creates a local web server that automatically live-updates in your browser whenever you modify a file:
+
+~~~bash
+jupyter book start
+~~~
+
+JupyterBook will report the URL at which it can be found (e.g. `http://localhost:3000`).
+
+### 7. Export a PDF
+
+To generate a print copy (for class notes or textbooks):
+
+~~~bash
+jupyter book build --pdf
+~~~
+
+### 8. Publish to GitHub Pages
+
+JupyterBook has a built-in function to set up GitHub Pages deployment:
+
+~~~bash
+jupyter book init --gh-pages
+~~~
+
+Answer the prompted questions; this will create a `.github/workflows/deploy.yml` file. Commit everything to a public GitHub repository, enable **Pages** in the repository settings set to build via **GitHub Actions**, and your site will be published automatically.
