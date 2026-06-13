@@ -75,4 +75,15 @@ plugins:
 
 nav:
   - Home: index.md
-  - Workshop 1: workshop-1/index.md
+  - Workshop 1:
+    - Overview: workshop-1/index.md
+    - 1. Static site generators: workshop-1/intro-static-sites.md
+    - 2. Markdown & Notebooks: workshop-1/markdown-and-notebooks.md
+    - 3. The tools:
+      - 3.1 MkDocs & Material: workshop-1/mkdocs.md
+      - 3.2 JupyterBook: workshop-1/jupyterbook.md
+      - 3.3 Jekyll: workshop-1/jekyll.md
+      - 3.4 Sphinx: workshop-1/sphinx.md
+    - 4. Hosting: workshop-1/hosting.md
+    - 5. Git basics: workshop-1/git-intro.md
+    - Hands-on tutorial: workshop-1/hands-on.md
