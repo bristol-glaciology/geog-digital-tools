@@ -1,24 +1,33 @@
 # Hands-on tutorial
 
-This session is unstructured — pick the path that matches the tool you want to explore and work at your own pace. Tom and Fabien are on hand to help.
+This session is unstructured — pick the path that matches the tool you want to explore and work at your own pace. **For those of you unfamiliar with working with git and GitHub via the command line, we recommend the Jekyll path**, as this can be used to produce a personal website only by interacting with the GitHub web GUI.
 
-## Jekyll path
+Tom and Fabien are on hand to help.
 
-*Good for: personal websites, project websites, fancier layouts. No Python required.*
+<div class="grid cards" markdown>
 
-!!! note "Coming soon"
-    Instructions for the Jekyll hands-on will be added here before the workshop.
+-   :material-web-box:{ .lg .middle } __Jekyll / Minimal Mistakes__
 
-## MkDocs path
+    ---
 
-*Good for: software documentation, project websites, anything Python-based.*
+    Good for: personal websites, project websites, fancier layouts. No Python required.
 
-!!! note "Coming soon"
-    Instructions for the MkDocs hands-on will be added here before the workshop.
+    [:octicons-arrow-right-24: Jekyll Path](hands-on-jekyll.md)
 
-## JupyterBook path
+-   :material-file-document-edit:{ .lg .middle } __MkDocs / Material__
 
-*Good for: computational content, tutorials, online books, papers with code.*
+    ---
 
-!!! note "Coming soon"
-    Instructions for the JupyterBook hands-on will be added here before the workshop.
+    Good for: software documentation, project websites, anything Python-based.
+
+    [:octicons-arrow-right-24: MkDocs Path](hands-on-mkdocs.md)
+
+-   :material-notebook:{ .lg .middle } __JupyterBook / MyST__
+
+    ---
+
+    Good for: computational content, tutorials, online books, papers with code
+
+    [:octicons-arrow-right-24: JupyterBook Path](hands-on-jupyterbook.md)
+
+</div>

@@ -4,24 +4,22 @@
 
 As with most examples here, the [JupyterBook website itself](https://jupyterbook.org/) is the primary example of a JupyterBook site, but other examples include [maths-heavy online textbooks](https://notes.eecs245.org/), [online supporting content for written GeoAI textbooks](https://book.opengeoai.org/), or [online working groups for the geoscience community](https://projectpythia.org/).
 
-!!! note "A note on JupyterBook and MyST"
+!!! note "Jupyter Book v1 (Sphinx) vs v2 (MyST)"
 
-    When you start using JupyterBook, you will quickly encounter the term [MyST](https://mystmd.org/) (Markedly Structured Text).
-
-    MyST is the underlying rendering engine, something the user rarely needs to think about — think of it as a 'flavour' of Markdown — that translates your Markdown and Jupyter documents into websites.
+    [Jupyter Book v2](https://jupyterbook.org/) was released in November 2025. Prior to this [Jupyter Book v1](https://jupyterbook.org/v1/intro.html) was the default. v1 was based around [the Sphinx documentation tool](workshop-1/sphinx). v2 is based around the [MyST](https://mystmd.org/) (Markedly Structured Text) engine (in fact, the two are [basically the same thing](https://jupyterbook.org/community/ecosystem/)). 
+    
+    Ultimately, the underlying rendering engine is something the user rarely needs to think about. The only reason to keep the move to v2/MyST in mind is that many online tutorials (and hallucinatory LLM output!) will still be referencing Sphinx-style setup and language. There is, in our opinion, [no reason to learn v1/Sphinx at this point](sphinx.md) (although, if you have a project already using it, there is also no compelling reason to move away from it).
 
 ## Getting Started with JupyterBook
 
-The [JupyterBook documentation](https://jupyterbook.org/stable/get-started/) is very good, but a streamlined version of the workflow is available here.
-
-Building and publishing a JupyterBook site involves the following steps:
+The [JupyterBook documentation](https://jupyterbook.org/stable/get-started/) is very good, but we outline a streamlined version of the workflow is available here:
 
 ### 1. Install JupyterBook
 
-Requires Python. Install the core package using `pip` or `conda`:
+Requires Python. Install the core packages using `pip` or `conda`:
 
 ~~~bash
-conda install jupyter-book
+conda install jupyter-book>=2.0.0
 ~~~
 
 ### 2. Initialise a project
@@ -83,4 +81,6 @@ JupyterBook has a built-in function to set up GitHub Pages deployment:
 jupyter book init --gh-pages
 ~~~
 
-Answer the prompted questions; this will create a `.github/workflows/deploy.yml` file. Commit everything to a public GitHub repository, enable **Pages** in the repository settings set to build via **GitHub Actions**, and your site will be published automatically.
+Answer the prompted questions; this will create a `.github/workflows/deploy.yml` file. 
+
+Commit everything to a public GitHub repository, enable **Pages** in the repository settings set to build via **GitHub Actions**, and your site will be published automatically upon new push actions. You can check whether deployment has worked within the GitHub Actions tab.
