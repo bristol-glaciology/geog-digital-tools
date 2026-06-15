@@ -3,28 +3,42 @@
 !!! note "External Documentation"
 
     This page aims to provide a streamlined tutorial for GitHub Pages and Jekyll/Minimal Mistakes, but full documentation is also available online:
-   
+
     - [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
     - [GitHub Pages](https://docs.github.com/en/pages)
 
 This page shows how to quickly create a Jekyll website based on the [Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide). It is a common theme that you might see replicated across many personal academic websites (including [Fabien's](https://fabienmaussion.info/) and [Tom's](https://trchudley.github.io/)).
 
-We will create this by replicating a minimal personal website tha already exists on the `bristol-glaciology` GitHub organisation. The repo is [available here](https://github.com/bristol-glaciology/example-jekyll-website) and you can see how this appears once hosted [at the following link](https://bristol-glaciology.github.io/example-jekyll-website/).  
+We will create this by replicating a minimal personal website that already exists on the `bristol-glaciology` GitHub organisation. The repo is [available here](https://github.com/bristol-glaciology/example-jekyll-website) and you can see how this appears once hosted [at the following link](https://bristol-glaciology.github.io/example-jekyll-website/).
 
-## A note on GitHub and GitHub Pages
+## Two ways to build your site
 
-!!! warning "Account Required"
+There are two ways to follow this tutorial. **Neither requires any prior experience with Git or the command line.** Pick whichever suits you:
 
-    This tutorial requires a GitHub account. Hopefully you already created one before the session. If not, you can [do it now](https://github.com/signup).
+|                       | In your browser *(recommended for beginners)*       | On your own computer                                  |
+| --------------------- | --------------------------------------------------- | ----------------------------------------------------- |
+| **GitHub account?**   | Yes — free, takes two minutes                       | Not needed                                            |
+| **Install anything?** | No                                                  | Yes — Ruby + Bundler                                  |
+| **Command line?**     | Never                                               | A little                                              |
+| **Best if…**          | you're new to all this and want a site online today | you'd rather not create an account, or want to work offline |
 
-The easiest and free way to host static sites is by taking advantage of the [GitHub Pages](https://docs.github.com/en/pages) feature of GitHub. This requires two things:
+The main tutorial below uses the **browser route**: no software to install and no command line — you just click and type on the GitHub website. If you would prefer to work offline without an account, skip ahead to [Build locally](#alternative-build-locally-no-github-account-needed).
 
-* A GitHub Account
-* A working knowledge of how to interact with GitHub repositories.
+## Setting up: your GitHub account
 
-Many of those coming from a more technical background may already have a working knowledge of how to interact with Git and GitHub via the command line (and will be familiar with processes such as e.g. `git commit`, `pull`, `push`, `clone`, etc.). If you are not, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) in your own time. If you do not foresee yourself needing to invest more widely in knowing Git in the future, you may instead wish to work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative.
+GitHub is a free website that stores your project and can publish it online for you, through a feature called [GitHub Pages](https://docs.github.com/en/pages). For the browser route, a free account is the only setup you need.
 
-If you know either of these approaches, you are welcome to work with them today. If you do not, these instructions will be for working exclusively with GitHub repos through the online web GUI. This is not the most efficient way of interacting with Git, but will see us through the afternoon and the creation of your first personal website.
+!!! tip "You do not need to learn \"Git\" to follow this tutorial"
+
+    You may have heard that GitHub involves a command line and cryptic commands like `commit`, `push` and `clone`. **You can ignore all of that here.** Everything below is done by clicking buttons and typing in your browser.
+
+!!! warning "You'll need a free GitHub account"
+
+    If you don't have one yet, [create one now](https://github.com/signup) — it only takes a couple of minutes. Don't want an account at all? Use the [build-locally route](#alternative-build-locally-no-github-account-needed) instead.
+
+!!! note "Already comfortable with Git?"
+
+    If you already know your way around Git and GitHub, you are welcome to use the command line or [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) today instead of the web interface. To learn the fundamentals properly in your own time, GitHub's [Hello World introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world) is a good starting point.
 
 ## Forking the website from GitHub
 
@@ -184,33 +198,40 @@ https://<your-github-username>.github.io/research-project/
 For most academic personal websites, the user-site approach described in this tutorial is the simplest option. It provides a clean URL, requires no additional configuration, and is generally the approach used for personal academic websites.
 
 
-## Advanced Topic: Working locally
+## Alternative: build locally (no GitHub account needed)
 
-The workflow above edits files directly on GitHub and relies on GitHub Pages to build the site remotely. This is perfectly adequate for a simple personal website, but it can be slower when making many edits or experimenting with layouts.
+The workflow above edits files directly on GitHub through the web interface — the easiest route, but it requires a (free) GitHub account. If you would rather **not** create an account, you can instead download the template and build the site on your own computer. You only ever need an account if and when you decide to publish online.
 
-If you are working locally on your computer, you can preview the site before pushing changes to GitHub.
+This local route also has advantages even if you do have an account: it is faster when making many edits or experimenting with layouts, since you can preview changes instantly before pushing them.
 
-### Clone the repository
+### Get the template
 
-Clone your repository to your local machine:
+- **No account:** on the [example repository](https://github.com/bristol-glaciology/example-jekyll-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer.
+- **With an account:** clone your fork instead, so you can push changes back and publish later:
 
-```bash
-git clone https://github.com/<your-github-username>/<your-github-username>.github.io.git
-cd <your-github-username>.github.io
-```
+    ```bash
+    git clone https://github.com/<your-github-username>/<your-github-username>.github.io.git
+    cd <your-github-username>.github.io
+    ```
 
 ### Install the site dependencies
 
-This Jekyll site uses Ruby and Bundler. If Ruby is installed on your system, you can install the required dependencies with:
+This Jekyll site uses Ruby and Bundler.
+
+!!! warning "TODO — local install instructions not finalised"
+
+    Running Jekyll locally needs **Ruby + Bundler** installed, and we are still deciding how to document this for the workshop. Two options on the table:
+
+    - **Option A — via conda/micromamba:** `micromamba create -n jekyll -c conda-forge ruby c-compiler make`, then `gem install bundler jekyll`. This keeps the install story unified with the Python tools (one [installation page](installation.md) for everything), but relies on native gem compilation — **needs testing on macOS, Windows and Linux before we recommend it**.
+    - **Option B — native Ruby:** system or Homebrew Ruby (macOS), [RubyInstaller](https://rubyinstaller.org/) (Windows), package manager (Linux). The conventional route, but more fiddly and platform-specific.
+
+    **Check and finalise before the workshop (19 June 2026).**
+
+Once Ruby and Bundler are available, install the site's dependencies:
 
 ```bash
+gem install bundler   # if Bundler is not already installed
 bundle install
-```
-
-You may need to install Bundler first:
-
-```bash
-gem install bundler
 ```
 
 ### Start the local server

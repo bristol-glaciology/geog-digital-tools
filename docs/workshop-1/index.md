@@ -78,11 +78,17 @@ This session is unstructured — use it however is most useful to you.
 
 ## How to prepare (optional)
 
-**Before the workshop:**
+!!! tip "Nothing here is required"
 
-- :material-lightning-bolt: **Register a lightning talk** via the form if you have a tool or workflow you'd like to highlight — 5 minutes is plenty.
-- :material-laptop: **[Install Conda or Mamba](installation.md)** if you plan to use MkDocs or JupyterBook on the day — both require Python. If you are going the Jekyll route, no installation is needed: the hands-on tutorial works entirely through the GitHub web interface.
-- :material-form-dropdown: **[Register for a GitHub account](https://github.com/signup)** if you don't already have one.
+    You can turn up with just a laptop and we'll help you get set up on the day. The steps below give you a head start, but none of them are mandatory.
+
+**Helps everyone:**
+
+- :material-account-plus: **[Create a free GitHub account](https://github.com/signup)** if you don't already have one — it takes a couple of minutes. It's needed to publish the site online quickly, and it's all you need for the easiest path: building a personal website [entirely in your browser](hands-on-jekyll.md), with nothing to install.
+
+**Only if you already know you'd like to try MkDocs or JupyterBook:**
+
+- :material-language-python: **[Install Python (Conda or Mamba)](installation.md)** — these two tools run on Python. Not sure yet? Skip it: you can decide on the day, and the Jekyll route needs no installation at all.
 
 **On the day:**
 

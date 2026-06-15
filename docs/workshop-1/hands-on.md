@@ -1,8 +1,21 @@
 # Hands-on tutorial
 
-This session is unstructured — pick the path that matches the tool you want to explore and work at your own pace. **For those of you unfamiliar with working with git and GitHub via the command line, we recommend the Jekyll path**, as this can be used to produce a personal website only by interacting with the GitHub web GUI.
+This session is unstructured — pick the path that matches the tool you want to explore and work at your own pace. Tom and Fabien are on hand to help.
 
-Tom and Fabien are on hand to help.
+## How each path works
+
+All three paths follow the same three stages:
+
+1. **Get the template** — either **download it as a ZIP** (no GitHub account needed) or **fork** it on GitHub (needs a free account).
+2. **Edit and preview on your own computer** — install the tool, make your changes, and preview the site locally. No account needed.
+3. **Publish online — optional** — put your site on the web with GitHub Pages. This is the **only** stage that requires a GitHub account.
+
+In other words, you can get a working website running on your laptop today without any GitHub account, and only sign up later if and when you want to publish.
+
+!!! tip "Two routes to an easy start"
+
+    - **No install, but needs a free GitHub account** — the [Jekyll path](hands-on-jekyll.md) lets you build a personal website entirely through the GitHub web interface, with no software to install. We recommend this for anyone unfamiliar with the command line.
+    - **No account, but needs a local install** — download any of the three templates as a ZIP and build it on your own machine.
 
 <div class="grid cards" markdown>
 
