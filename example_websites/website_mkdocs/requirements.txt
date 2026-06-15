@@ -1,5 +1,0 @@
-mkdocs
-mkdocs-material
-mkdocs-jupyter
-# pymdown-extensions
-# mkdocs-mermaid2-plugin

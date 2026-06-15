@@ -3,7 +3,7 @@
 
 !!! note "External Documentation"
 
-    This page aims to provide a streamlined tutorial for GitHub Pages and Jekyll/Minimal Mistakes, but full documentation is also available online:
+    This page aims to provide a streamlined tutorial for GitHub Pages and Jupyter Book, but full documentation is also available online:
    
     - [Jupyter Book](https://jupyterbook.org/stable/get-started/)
     - [GitHub Pages](https://docs.github.com/en/pages)
@@ -15,6 +15,10 @@ This page shows how to quickly create an example website using [Jupyter Book](ht
     This tutorial requires a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
 
 ## Getting the website
+
+!!! tip "No GitHub account? Download instead"
+
+    You do not need a GitHub account to try Jupyter Book. On the [template repository](https://github.com/bristol-glaciology/example-jupyterbook-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer. You can then follow the *Editing locally* steps below and preview your site. You only need an account if you later want to **publish** it online (the optional final step), in which case use the **fork** route instead.
 
 ### Forking the repository
 
@@ -72,19 +76,19 @@ Once the fork has been created, you need a local copy on your computer.
 
 ## Editing locally
 
-## Installation
+### Installation
 
 Ensure the necessary dependencies are installed within your chosen Python environment:
 
 ```bash
 conda create --name webdev
 conda activate webdev
-conda install -r python jupyter-book>=2.0.0 jupyter jupyterlab matplotlib numpy ghp-import
+conda install -c conda-forge jupyter-book>=2.0.0 jupyter jupyterlab matplotlib numpy ghp-import
 ```
 
 ## Editing
 
-### 3. The config file: `myst.yml`
+### The config file: `myst.yml`
 
 Open the newly generated `myst.yml` file in a text editor. This single file controls everything. Fill out your global project variables under the `project:` block (such as `title`, `description`, and `authors`).
 
@@ -128,7 +132,9 @@ To generate a print copy (for class notes or textbooks):
 jupyter book build --pdf
 ~~~
 
-### 8. Publish to GitHub Pages
+### Publish to GitHub Pages (optional — requires a GitHub account)
+
+Everything up to this point works without a GitHub account. Publishing your site online is the only step that needs one: you must have **forked** the template (rather than downloaded the ZIP) so that you have a repository to deploy from.
 
 JupyterBook has a built-in function to set up GitHub Pages deployment:
 
