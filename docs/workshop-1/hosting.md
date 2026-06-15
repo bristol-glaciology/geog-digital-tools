@@ -2,7 +2,7 @@
 
 ## Where do the files go?
 
-A static site generator produces a folder of HTML, CSS, and JavaScript files. On your laptop, you can preview them with `mkdocs serve` or `jupyter book start` — but for anyone else to see your site, those files need to live on a **server**: a computer that is permanently connected to the internet and responds to requests from web browsers.
+A static site generator produces a folder of HTML, CSS, and JavaScript files. On your laptop, you can preview them with `mkdocs serve` (MkDocs) or `jupyter book start` (Jupyter Book) or `bundle exec jekyll serve` (Jekyll) — but for anyone else to see your site, those files need to live on a **server**: a computer that is permanently connected to the internet and responds to requests from web browsers.
 
 You don't need to understand servers in depth to publish a website. The question is simply: which server will host your files, and how do you get them there?
 
@@ -10,7 +10,7 @@ You don't need to understand servers in depth to publish a website. The question
 
 ### University or institutional servers
 
-Some universities offer web hosting for staff and students, though this is increasingly rare — the University of Bristol, for instance, does not (as far as we are aware). If your institution does provide it, the limitations are the same regardless: you are dependent on your employer (your site disappears if you leave), customisation is typically restricted, and the update workflow is manual. Worth asking your IT department, but don't count on it.
+Some universities offer web hosting for staff and students, though this is increasingly rare — the University of Bristol, for instance, does not (as far as we are aware), and instead encourages users to operate exclusively within WordPress via the [Bristol Blogs service](https://www.bristol.ac.uk/research-it/our-remit/bristol-blogs-information/). If your institution does provide it, the limitations are the same regardless: you are dependent on your employer (your site disappears if you leave), customisation is typically restricted, and the update workflow is manual. Worth asking your IT department, but don't count on it.
 
 ### Commercial web hosting
 
@@ -34,7 +34,7 @@ All of the tools covered in this workshop (MkDocs, JupyterBook, Jekyll) have fir
 
 Once your site is live, you may want to know how many people visit it and which pages they read. All the tools in this workshop support analytics — MkDocs Material has [built-in configuration](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/) for it, and Jekyll's Minimal Mistakes theme does too; for JupyterBook you add a small script snippet to the HTML header.
 
-The default choice is often **Google Analytics**, which is free and widely supported. There are two reasons to think twice before using it. The first is practical: GA drops tracking cookies in visitors' browsers, which technically requires a cookie consent banner under GDPR — an annoying addition to an otherwise clean academic site. The second is ethical: by embedding GA, you are sending detailed behavioural data about your readers to Google, who uses it for their own purposes (ad targeting, profiling). For some academics, there is something uncomfortable about routing their audience's reading habits through a surveillance advertising platform — even if it is technically legal.
+The default choice is often **Google Analytics**, which is free and widely supported. There are two reasons to think twice before using it. The first is practical: GA drops tracking cookies in visitors' browsers, which requires a cookie consent banner under GDPR — an annoying addition to an otherwise clean academic site. Cookie banners are not always supported out-of-the-box via the workflows we have shown here, often requiring [custom or community implementations](https://github.com/karstenj/cookie-consent-banner). The second is ethical: by embedding GA, you are sending detailed behavioural data about your readers to Google, who uses it for their own purposes (ad targeting, profiling). For some academics, there is something uncomfortable about routing their audience's reading habits through a surveillance advertising platform — even if it is technically legal.
 
 A cleaner alternative is **[Plausible](https://plausible.io)**: cookieless, privacy-respecting, and no consent banner needed. The cloud-hosted version costs around €9/month, which is fine for a funded project but not for a personal site. The self-hosted version is free and open-source — [OGGM](https://oggm.org) runs its own Plausible server, which anyone in the project can use at no cost, though someone has to maintain the server. [GoatCounter](https://www.goatcounter.com) is another cookieless option with a generous free tier.
 

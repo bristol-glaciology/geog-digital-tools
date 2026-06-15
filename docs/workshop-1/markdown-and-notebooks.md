@@ -38,7 +38,7 @@ Include inline code with tickmarks such as `print("Hello World")`.
 
 You can also display full code blocks:
 
-```markdown
+```python
 def add_numbers(a, b):
     return a + b
 ```
@@ -61,6 +61,12 @@ There are also specialist Markdown desktop apps such as [Obdisian](https://obsid
 
 Standard Markdown is intentionally simple, which is also its primary limitation. Over time, different communities built "flavours" to extend what Markdown can do. This can result in slightly confusing situations where different editors, environments, or tools can support different features (such as super/subscripts, strikethrough, highlighting, etc.) in [different ways](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f).
 
+Different static site generators will support different 'flavours' of Markdown:
+
+- **Python-Markdown / Kramdown** (used by MkDocs, Jekyll) — good for documentation and web pages, but less suited to long-form academic writing with heavy cross-referencing.
+- **[MyST](https://mystmd.org/)** (used by JupyterBook) — the richest option for academic writing. Native support for citations via BibTeX, numbered and cross-referenced figures, equations, and theorem environments. Designed explicitly for scientific content.
+- **[Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)** (used by [Quarto](https://quarto.org)) — a similarly capable alternative, and the tool of choice in the R community. Pandoc can also convert your document to Word, PDF, or LaTeX if needed.
+
 As a result, whilst 90% of what you want to do with Markdown will be achievable with the basic syntax, you should always try and be aware of what additional syntax might be supported when writing Markdown files for specific tools.
 
 !!! note "Extensions"
@@ -75,18 +81,6 @@ These was produced as follows - but they won't display correctly in 'vanilla' Ma
 For instance, this very page is written in Markdown...
 ~~~
 
-This is simultaneously a lesson and a warning...
-
-### A note for book and paper writers
-
-If you are thinking about writing something more structured — a textbook, a thesis chapter, a long report — standard Markdown will quickly feel limiting. The features academics need most (citations, numbered figures, cross-references, LaTeX equations) are not part of the base spec. Here is where the choice of flavour matters:
-
-- **[MyST](https://mystmd.org/)** (used by JupyterBook) — the richest option for academic writing. Native support for citations via BibTeX, numbered and cross-referenced figures, equations, and theorem environments. Designed explicitly for scientific content.
-- **[Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)** (used by [Quarto](https://quarto.org)) — a similarly capable alternative, and the tool of choice in the R community. Pandoc can also convert your document to Word, PDF, or LaTeX if needed.
-- **Python-Markdown / Kramdown** (MkDocs, Jekyll) — good for documentation and web pages, but less suited to long-form academic writing with heavy cross-referencing.
-
-If citations and cross-references are central to what you want to build, **JupyterBook/MyST** or **Quarto** are the right starting points.
-
 ## 2: Writing with Jupyter Notebooks
 
 While Markdown is perfect for prose, websites academics want to produce often involve code, data analysis, modelling, and plotting. This is where [Jupyter Notebooks](https://jupyter.org/) (`.ipynb`) can provide real value for including code and code outputs.
@@ -94,6 +88,24 @@ While Markdown is perfect for prose, websites academics want to produce often in
 If you are interested in this sort of thing, you are likely already familiar with Jupyter Notebooks - especially Python users (although Jupyter also supports languages like R and Julia).
 
 If you already work with Jupyter Notebooks, you don't need an introduction to running them — the key thing for this workshop is knowing that some static site tools can take your existing `.ipynb` files and turn them directly into web pages, complete with rendered outputs. [This page](https://edu-notebooks.oggm.org/oggm-edu/glacier_water_resources.html) is an example of what that can look like.
+
+### Quick Guide
+
+To create and run notebooks locally, you will want to install the broader Jupyter ecosystem. If you already have Python configured, you can install it alongside in your local environment:
+
+```bash
+conda install jupyterlab
+
+```
+
+Once installed, spin up your authoring interface using this command:
+
+```bash
+jupyter lab
+
+```
+
+This launches a dashboard in your web browser where you can create and write Notebooks. Jupyter Notebooks combine computational code cells (running Python, R, or Julia) with explanatory narrative text cells (written in Markdown). Instructions on how to take advantage of this full functionality are best left to other tutorials.
 
 ### Intersecting with Other Tools (The Static Site Landscape)
 

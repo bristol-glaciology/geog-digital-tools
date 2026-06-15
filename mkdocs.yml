@@ -86,4 +86,8 @@ nav:
       - 3.4 Sphinx: workshop-1/sphinx.md
     - 4. Hosting: workshop-1/hosting.md
     - 5. Git basics: workshop-1/git-intro.md
-    - Hands-on tutorial: workshop-1/hands-on.md
+    - 6. Hands-on tutorial: 
+      - 6.1 Introduction: workshop-1/hands-on.md
+      - 6.2 Jekyll: workshop-1/hands-on-jekyll.md
+      - 6.3 MkDocs & Material: workshop-1/hands-on-mkdocs.md
+      - 6.4 JupyterBook: workshop-1/hands-on-jupyterbook.md

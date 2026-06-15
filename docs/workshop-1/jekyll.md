@@ -14,7 +14,7 @@ Examples of Jekyll in use include GitHub Pages personal blogs, academic homepage
 
 !!! tip "Workshop shortcut"
 
-    For the hands-on session, we skip the from-scratch setup below and instead **fork a ready-made template** — a much faster path. Head to the [hands-on tutorial](hands-on.md) when you are ready to build your site.
+    For the hands-on session, we skip the from-scratch setup below and instead **fork a ready-made template** — a much faster path. Head to the [hands-on tutorial](hands-on-jekyll.md) when you are ready to build your site.
 
     The steps below are for those who want to understand how Jekyll works from the ground up, or who need to set up a project independently.
 

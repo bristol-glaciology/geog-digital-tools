@@ -82,6 +82,7 @@ This session is unstructured — use it however is most useful to you.
 
 - :material-lightning-bolt: **Register a lightning talk** via the form if you have a tool or workflow you'd like to highlight — 5 minutes is plenty.
 - :material-laptop: **[Install Conda or Mamba](installation.md)** if you plan to use MkDocs or JupyterBook on the day — both require Python. If you are going the Jekyll route, no installation is needed: the hands-on tutorial works entirely through the GitHub web interface.
+- :material-form-dropdown: **[Register for a GitHub account](https://github.com/signup)** if you don't already have one.
 
 **On the day:**
 
