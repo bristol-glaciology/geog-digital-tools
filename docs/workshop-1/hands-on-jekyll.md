@@ -4,19 +4,20 @@
 
     This page aims to provide a streamlined tutorial for GitHub Pages and Jekyll/Minimal Mistakes, but full documentation is also available online:
    
-    - [GitHub Pages](https://docs.github.com/en/pages)
     - [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+    - [GitHub Pages](https://docs.github.com/en/pages)
 
-## Introduction
+This page shows how to quickly create a Jekyll website based on the [Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide). It is a common theme that you might see replicated across many personal academic websites (including [Fabien's](https://fabienmaussion.info/) and [Tom's](https://trchudley.github.io/)).
 
-The easiest and free way to host static sites is by taking advantage of the [GitHub Pages](https://docs.github.com/en/pages) feature of GitHub.
+We will create this by replicating a minimal personal website tha already exists on the `bristol-glaciology` GitHub organisation. The repo is [available here](https://github.com/bristol-glaciology/example-jekyll-website) and you can see how this appears once hosted [at the following link](https://bristol-glaciology.github.io/example-jekyll-website/).  
 
-!!! note "Alternative Options"
+## A note on GitHub and GitHub Pages
 
-    You can also host on [ReadTheDocs](https://docs.readthedocs.com/), which is particularly popular for Python package documentation (see instructions for [MkDocs](https://docs.readthedocs.com/platform/stable/intro/mkdocs.html) and [MyST/Jupyter Book](https://mystmd.org/guide/deployment-readthedocs)), but even these require pushing to a GitHub repo as standard.
+!!! warning "Account Required"
 
+    This tutorial requires a GitHub account. Hopefully you already created one before the session. If not, you can [do it now](https://github.com/signup).
 
-This requires two things:
+The easiest and free way to host static sites is by taking advantage of the [GitHub Pages](https://docs.github.com/en/pages) feature of GitHub. This requires two things:
 
 * A GitHub Account
 * A working knowledge of how to interact with GitHub repositories.
@@ -25,17 +26,7 @@ Many of those coming from a more technical background may already have a working
 
 If you know either of these approaches, you are welcome to work with them today. If you do not, these instructions will be for working exclusively with GitHub repos through the online web GUI. This is not the most efficient way of interacting with Git, but will see us through the afternoon and the creation of your first personal website.
 
-## A minimal Jekyll personal Website
-
-!!! warning "Account Required"
-
-    This tutorial requires a GitHub account. Hopefully you already created one before the session. If not, you can [do it now](https://github.com/signup).
-
-A minimal personal website already exists on the `bristol-glaciology` GitHub organisation. The repo is [available here](https://github.com/bristol-glaciology/example-personal-website) and you can see how this appears once hosted [at the following link](https://bristol-glaciology.github.io/example-personal-website/). The website takes advantage of Jekyll using the Minimal Mistakes theme. It is a common theme that you might see replicated across many personal academic websites (including [Fabien's](https://fabienmaussion.info/) and [Tom's](https://trchudley.github.io/)).
-
-## Constructing the Website
-
-### Forking the Website
+## Forking the website from GitHub
 
 Rather than creating a website from scratch, we will start by creating our own copy of the example repository. On GitHub, this process is called **forking**.
 
@@ -54,6 +45,10 @@ https://<your-github-username>.github.io
 ```
 
 When creating the fork, you can leave the default options selected. Once the fork has completed, you should find yourself in your own copy of the repository. Any changes you make from this point onwards will only affect your website.
+
+
+## Constructing the Website
+
 
 ### The website repo
 
@@ -156,7 +151,7 @@ Once uploaded, images can be included within pages using standard Markdown synta
 
 As with any other change, remember to commit the uploaded files when prompted.
 
-## Publishing the website
+## Publishing the website on GitHub Pages
 
 GitHub Pages must be enabled before the website becomes publicly accessible.
 
@@ -189,15 +184,13 @@ https://<your-github-username>.github.io/research-project/
 For most academic personal websites, the user-site approach described in this tutorial is the simplest option. It provides a clean URL, requires no additional configuration, and is generally the approach used for personal academic websites.
 
 
-## Advanced Topics
-
-### Previewing the site locally
+## Advanced Topic: Working locally
 
 The workflow above edits files directly on GitHub and relies on GitHub Pages to build the site remotely. This is perfectly adequate for a simple personal website, but it can be slower when making many edits or experimenting with layouts.
 
 If you are working locally on your computer, you can preview the site before pushing changes to GitHub.
 
-#### Clone the repository
+### Clone the repository
 
 Clone your repository to your local machine:
 
@@ -206,9 +199,9 @@ git clone https://github.com/<your-github-username>/<your-github-username>.githu
 cd <your-github-username>.github.io
 ```
 
-#### Install the site dependencies
+### Install the site dependencies
 
-This Jekyll site uses Ruby and Bundler. If Ruby is installed on your system, install the required dependencies with:
+This Jekyll site uses Ruby and Bundler. If Ruby is installed on your system, you can install the required dependencies with:
 
 ```bash
 bundle install
@@ -220,7 +213,7 @@ You may need to install Bundler first:
 gem install bundler
 ```
 
-#### Start the local server
+### Start the local server
 
 Run:
 
@@ -236,7 +229,7 @@ http://localhost:4000
 
 Open this address in your browser to preview the website. The server will automatically rebuild the site when you save changes to files.
 
-#### Push changes to GitHub
+### Push changes to GitHub
 
 Once you are happy with the result, commit and push your changes:
 
@@ -251,33 +244,4 @@ GitHub Pages will then rebuild and publish the updated site online.
 !!! note
 
     Running the site locally requires additional software that is not needed for the GitHub web-GUI workflow described in this tutorial. If you only plan to make occasional edits to a personal website, working directly through GitHub is often the simpler option.
-
-### Using your own domain
-
-GitHub Pages sites are available by default at URLs such as:
-
-```text
-https://<your-github-username>.github.io
-```
-
-You can also use a custom domain, for example:
-
-```text
-https://www.example.com
-```
-
-Many academic researchers choose to purchase a personal domain name (e.g. Fabien's is at fabienmaussion.info, even though it is managed through a [standard GitHub repo](https://github.com/fmaussion/fmaussion.github.io)). This is useful if you expect to maintain a website over a long period of time. Doing so can make it easier to move between hosting providers in the future without changing the public address of the website. 
-
-On the other hand, although Tom does own a personal domain name that redirects to his website (tom-chudley.com), he explicity chose to keep the github pages address (trchudley.github.io) as the address during his lectureship job hunt. Within Geography/Earth Sciences, where programming skills can vary, having a `.github.io` address can be a useful shibboleth for programming capability...
-
-
-To set up a custom web domain, you will need to:
-
-1. Purchase a domain name from a domain registrar.
-2. Configure the domain's DNS records so that they point to GitHub Pages.
-3. Add the domain name within the GitHub Pages settings for your repository.
-
-[GitHub provides detailed instructions in the official documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
-
-Once configured correctly, GitHub Pages will automatically serve your website from your custom domain and manage HTTPS certificates for you.
 

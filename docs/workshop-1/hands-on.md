@@ -4,23 +4,30 @@ This session is unstructured — pick the path that matches the tool you want to
 
 Tom and Fabien are on hand to help.
 
-## Jekyll path
+<div class="grid cards" markdown>
 
-*Good for: personal websites, project websites, fancier layouts. No Python required.*
+-   :material-web-box:{ .lg .middle } __Jekyll / Minimal Mistakes__
 
-!!! note "Coming soon"
-    Instructions for the Jekyll hands-on will be added here before the workshop.
+    ---
 
-## MkDocs path
+    Good for: personal websites, project websites, fancier layouts. No Python required.
 
-*Good for: software documentation, project websites, anything Python-based.*
+    [:octicons-arrow-right-24: Jekyll Path](hands-on-jekyll.md)
 
-!!! note "Coming soon"
-    Instructions for the MkDocs hands-on will be added here before the workshop.
+-   :material-file-document-edit:{ .lg .middle } __MkDocs / Material__
 
-## JupyterBook path
+    ---
 
-*Good for: computational content, tutorials, online books, papers with code.*
+    Good for: software documentation, project websites, anything Python-based.
 
-!!! note "Coming soon"
-    Instructions for the JupyterBook hands-on will be added here before the workshop.
+    [:octicons-arrow-right-24: MkDocs Path](hands-on-mkdocs.md)
+
+-   :material-notebook:{ .lg .middle } __JupyterBook / MyST__
+
+    ---
+
+    Good for: computational content, tutorials, online books, papers with code
+
+    [:octicons-arrow-right-24: JupyterBook Path](hands-on-jupyterbook.md)
+
+</div>

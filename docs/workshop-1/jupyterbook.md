@@ -16,10 +16,10 @@ The [JupyterBook documentation](https://jupyterbook.org/stable/get-started/) is 
 
 ### 1. Install JupyterBook
 
-Requires Python. Install the core package using `pip` or `conda`:
+Requires Python. Install the core packages using `pip` or `conda`:
 
 ~~~bash
-conda install jupyter-book
+conda install jupyter-book>=2.0.0
 ~~~
 
 ### 2. Initialise a project
@@ -81,4 +81,6 @@ JupyterBook has a built-in function to set up GitHub Pages deployment:
 jupyter book init --gh-pages
 ~~~
 
-Answer the prompted questions; this will create a `.github/workflows/deploy.yml` file. Commit everything to a public GitHub repository, enable **Pages** in the repository settings set to build via **GitHub Actions**, and your site will be published automatically.
+Answer the prompted questions; this will create a `.github/workflows/deploy.yml` file. 
+
+Commit everything to a public GitHub repository, enable **Pages** in the repository settings set to build via **GitHub Actions**, and your site will be published automatically upon new push actions. You can check whether deployment has worked within the GitHub Actions tab.
