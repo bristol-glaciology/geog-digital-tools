@@ -60,13 +60,3 @@ To set up a custom web domain, you will need to:
 [GitHub provides detailed instructions in the official documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
 Once configured correctly, GitHub Pages will automatically serve your website from your custom domain and manage HTTPS certificates for you.
-
-## Side quest: web analytics
-
-Once your site is live, you may want to know how many people visit it and which pages they read. All the tools in this workshop support analytics — MkDocs Material has [built-in configuration](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/) for it, and Jekyll's Minimal Mistakes theme does too; for JupyterBook you add a small script snippet to the HTML header.
-
-The default choice is often **Google Analytics**, which is free and widely supported. There are two reasons to think twice before using it. The first is practical: GA drops tracking cookies in visitors' browsers, which requires a cookie consent banner under GDPR — an annoying addition to an otherwise clean academic site. Cookie banners are not always supported out-of-the-box via the workflows we have shown here, often requiring [custom or community implementations](https://github.com/karstenj/cookie-consent-banner). The second is ethical: by embedding GA, you are sending detailed behavioural data about your readers to Google, who uses it for their own purposes (ad targeting, profiling). For some academics, there is something uncomfortable about routing their audience's reading habits through a surveillance advertising platform — even if it is technically legal.
-
-A cleaner alternative is **[Plausible](https://plausible.io)**: cookieless, privacy-respecting, and no consent banner needed. The cloud-hosted version costs around €9/month, which is fine for a funded project but not for a personal site. The self-hosted version is free and open-source — [OGGM](https://oggm.org) runs its own Plausible server, which anyone in the project can use at no cost, though someone has to maintain the server. [GoatCounter](https://www.goatcounter.com) is another cookieless option with a generous free tier.
-
-For a personal academic website with modest traffic, any of these works. For a project site where you care about GDPR compliance, Plausible is worth the effort.

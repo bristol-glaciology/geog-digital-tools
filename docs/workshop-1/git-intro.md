@@ -1,4 +1,4 @@
-# 5. Git and GitHub — the basics
+# 6. Git and GitHub — the basics
 
 Publishing a website with any of the tools in this workshop ultimately means putting your files somewhere on the internet. The standard way to do this — and the one all the tools here are built around — is [GitHub](https://github.com), which requires a basic understanding of **Git**.
 

@@ -50,8 +50,9 @@ The purpose of part 1 is to provide a general overview of a family of tools whic
     - [MkDocs & Material](mkdocs.md) — good for software documentation and project websites like this one
     - [Jekyll](jekyll.md) — good for fancier personal or project websites
     - Honourable mention: [Sphinx](sphinx.md) — the venerable and still well-used software documentation tool
-4. [Hosting: GitHub Pages and ReadTheDocs](hosting.md), web analytics (brief overview).
-5. [Git and GitHub — the basics](git-intro.md) — what is version control and why you need it to publish on GitHub.
+4. [Hosting: GitHub Pages and ReadTheDocs](hosting.md).
+5. [Legal aspects](legal.md) — privacy, cookies, and owning the copyright to your images.
+6. [Git and GitHub — the basics](git-intro.md) — what is version control and why you need it to publish on GitHub.
 
 *The links above point to the reference pages for each topic — they reflect the structure of the slides and are intended for use during the hands-on session and after the workshop.*
 

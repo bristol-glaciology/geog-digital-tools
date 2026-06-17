@@ -214,23 +214,48 @@ This local route also has advantages even if you do have an account: it is faste
     cd <your-github-username>.github.io
     ```
 
-### Install the site dependencies
+### Install Ruby and Jekyll
 
-This Jekyll site uses Ruby and Bundler.
+Building the site on your own computer needs **Ruby** (the language Jekyll is written in) plus a couple of small build tools. There are two ways to get them — pick whichever suits you.
 
-!!! warning "TODO — local install instructions not finalised"
+=== "With micromamba / conda"
 
-    Running Jekyll locally needs **Ruby + Bundler** installed, and we are still deciding how to document this for the workshop. Two options on the table:
+    If you already use micromamba or conda — for example for the MkDocs or JupyterBook paths — this keeps everything in one place and works the same on every platform. Create an environment with Ruby and a compiler, then activate it:
 
-    - **Option A — via conda/micromamba:** `micromamba create -n jekyll -c conda-forge ruby c-compiler make`, then `gem install bundler jekyll`. This keeps the install story unified with the Python tools (one [installation page](installation.md) for everything), but relies on native gem compilation — **needs testing on macOS, Windows and Linux before we recommend it**.
-    - **Option B — native Ruby:** system or Homebrew Ruby (macOS), [RubyInstaller](https://rubyinstaller.org/) (Windows), package manager (Linux). The conventional route, but more fiddly and platform-specific.
+    ```bash
+    micromamba create -n jekyll -c conda-forge ruby cxx-compiler make
+    micromamba activate jekyll
+    ```
 
-    **Check and finalise before the workshop (19 June 2026).**
+    Then install Jekyll and Bundler into it:
 
-Once Ruby and Bundler are available, install the site's dependencies:
+    ```bash
+    gem install bundler jekyll
+    ```
+
+    Remember to run `micromamba activate jekyll` each time you open a new terminal to work on your site.
+
+    !!! note "Tested on macOS so far"
+
+        We've tested this route on macOS, where it works nicely. It should behave the same on Windows and Linux, but we haven't confirmed that yet. If anything misbehaves on the day, just switch to the native Ruby tab — or fall back to the no-install [browser route](#two-ways-to-build-your-site). Either way, let us know!
+
+=== "With a native Ruby install"
+
+    The conventional route is to install Ruby directly:
+
+    - **macOS:** the cleanest option is [Homebrew](https://brew.sh): `brew install ruby`. (The Ruby that ships with macOS is old and awkward for installing gems, so a Homebrew Ruby is recommended.)
+    - **Windows:** download and run [RubyInstaller](https://rubyinstaller.org/), choosing the version **with the DevKit** — this includes the build tools Jekyll needs.
+    - **Linux:** install Ruby and its development headers via your package manager, e.g. `sudo apt install ruby-full build-essential` on Debian/Ubuntu.
+
+    Then install Jekyll and Bundler:
+
+    ```bash
+    gem install bundler jekyll
+    ```
+
+Now, from inside the website folder, install the site's own dependencies (the extra gems listed in its `Gemfile`):
 
 ```bash
-gem install bundler   # if Bundler is not already installed
 bundle install
 ```
 
