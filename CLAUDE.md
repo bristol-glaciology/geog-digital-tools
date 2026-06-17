@@ -28,7 +28,8 @@ Workshop date: **19 June 2026**. About 30 participants, mix of technical backgro
 | `jupyterbook.md` | Tom | **Done** — ported from `prep_hackmd/3.3 JupyterBook & MyST.md`, fixed admonition and analogy |
 | `jekyll.md` | Tom | **Done** — ported from `prep_hackmd/3.4 Jekyll.md`, fixed malformed admonition (body was in fenced block) |
 | `sphinx.md` | Fabien | **Done** — what it is, RST, how it differs from MkDocs, when to use it |
-| `hosting.md` | Fabien | **Done** — server explainer, hosting options, GitHub Pages recommendation, ReadTheDocs, analytics (incl. Plausible/GDPR/ethics) |
+| `hosting.md` | Fabien | **Done** — server explainer, hosting options, GitHub Pages recommendation, ReadTheDocs, custom domains (analytics moved to `legal.md`) |
+| `legal.md` | Fabien | **Done** — "I'm not a lawyer" intro; privacy policy & who's in charge, data minimisation, cookies/web analytics (moved from hosting), image copyright |
 | `git-intro.md` | Fabien | **Done** — conceptual page: what is git/GitHub, why it's needed for hosting, encouragement + resources |
 | `hands-on.md` | — | **Done** — router page; grid cards + shared three-stage framing (get template → preview locally → publish optionally; only publishing needs a GitHub account) |
 | `hands-on-jekyll.md` | Tom | **Done** — web-GUI tutorial (headline, no install, needs account) + local route as no-account alternative. Local Ruby install instructions are a TODO (see below) |
@@ -61,23 +62,23 @@ nav:
       - 3.3 Jekyll: workshop-1/jekyll.md
       - 3.4 Sphinx: workshop-1/sphinx.md
     - 4. Hosting: workshop-1/hosting.md
-    - 5. Git basics: workshop-1/git-intro.md
-    - 6. Hands-on tutorial:
-      - 6.1 Introduction: workshop-1/hands-on.md
-      - 6.2 Jekyll: workshop-1/hands-on-jekyll.md
-      - 6.3 MkDocs & Material: workshop-1/hands-on-mkdocs.md
-      - 6.4 JupyterBook: workshop-1/hands-on-jupyterbook.md
+    - 5. Legal aspects: workshop-1/legal.md
+    - 6. Git basics: workshop-1/git-intro.md
+    - 7. Hands-on tutorial:
+      - 7.1 Introduction: workshop-1/hands-on.md
+      - 7.2 Jekyll: workshop-1/hands-on-jekyll.md
+      - 7.3 MkDocs & Material: workshop-1/hands-on-mkdocs.md
+      - 7.4 JupyterBook: workshop-1/hands-on-jupyterbook.md
 ```
 
 `installation.md` is intentionally excluded from the nav — it is a prerequisite page, not a programme section.
 
 ### Remaining TODO
 
-- **Jekyll local install instructions** (`hands-on-jekyll.md`): not finalised. Two options documented in-page as a TODO admonition:
-  - **Option A** — Ruby via conda/micromamba (`micromamba create -n jekyll -c conda-forge ruby c-compiler make`, then `gem install bundler jekyll`). Unifies the install story with the Python tools, but relies on native gem compilation. **Untested** — the env-creation test on 2026-06-15 was abandoned (slow connection). Retest on a fast connection across macOS/Windows/Linux before committing.
-  - **Option B** — native Ruby (Homebrew/system, RubyInstaller, package manager). Conventional but fiddly/platform-specific.
-  - If Option A tests clean, fold Ruby into `installation.md` so there is one unified install page.
-- **Verify example repos exist** under `bristol-glaciology`: `example-jekyll-website`, `example-mkdocs-website`, `example-jupyterbook-website` (Tom's hands-on pages link to all three; earlier draft used `example-personal-website`).
+- **Jekyll local install** (`hands-on-jekyll.md`): **finalised** — two routes documented as tabs:
+  - **micromamba/conda:** `micromamba create -n jekyll -c conda-forge ruby cxx-compiler make`, activate, `gem install bundler jekyll`. Note: needs `cxx-compiler` (C++) — `c-compiler` alone fails on native gems (eventmachine, sass-embedded) — and the env must be activated when running `gem`/`bundle`. **Verified end-to-end on macOS** (2026-06-17, full build of `example-jekyll-website` template succeeds). **Untested on Windows/Linux** — flagged in-page with a low-key note; Fabien to ask an RSE to test.
+  - **native Ruby:** Homebrew (macOS), RubyInstaller + DevKit (Windows), `apt install ruby-full build-essential` (Linux).
+  - Open decision (with Tom): whether to fold the conda route into `installation.md` for one unified install page, once Windows/Linux are confirmed.
 - Review and iteration with Tom before the workshop (19 June 2026)
 
 ## Build and deploy
