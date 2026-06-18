@@ -12,9 +12,15 @@ This page shows how to quickly create an example website using [MkDocs](https://
 
 !!! warning "Basic git and Python knowledge required"
 
-    This tutorial requires a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
+    This tutorial recommends a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
 
     You will also need to know how to setup a Python environment, but you do not need to know how to code in Python.
+
+## Getting the website
+
+!!! tip "No GitHub account? Download instead"
+
+    You do not need a GitHub account to try Jupyter Book. On the [template repository](https://github.com/bristol-glaciology/example-jupyterbook-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer. You can then follow the *Editing locally* steps below and preview your site. You only need an account if you later want to **publish** it online (the optional final step), in which case use the **fork** route instead.
 
 ### Forking the website from GitHub
 
@@ -102,6 +108,8 @@ Add content (markdown files, jupyter notebook, and image assets) inside the `./d
   - `docs/assets/` - Images and other assets
 
 Edit the `nav` section of `mkdocs.yml` to ensure that these are appropriately arranged within the site and navbar.
+
+If ytou
 
 ## Building and Pushing
 
