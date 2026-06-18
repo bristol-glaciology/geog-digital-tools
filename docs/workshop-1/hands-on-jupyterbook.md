@@ -3,24 +3,28 @@
 
 !!! note "External Documentation"
 
-    This page aims to provide a streamlined tutorial for GitHub Pages and Jupyter Book, but full documentation is also available online:
+    This page aims to provide a streamlined tutorial for GitHub Pages and Jupyter Book. Full documentation is available online:
    
     - [Jupyter Book](https://jupyterbook.org/stable/get-started/)
     - [GitHub Pages](https://docs.github.com/en/pages)
 
 This page shows how to quickly create an example website using [Jupyter Book](https://jupyterbook.org/) with the [MyST engine](https://mystmd.org/), based on a template available on the [`bristol-glaciology` Github repository](https://github.com/bristol-glaciology/example-jupyterbook-website). You can [view a preview of what the website looks like](https://bristol-glaciology.github.io/example-jupyterbook-website/).
 
-!!! warning "Basic git knowledge required"
+!!! warning "Basic git and Python knowledge required"
 
-    This tutorial requires a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
+    This tutorial recommends a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
+
+    You will also need to know how to setup a Python environment, but you do not need to know how to code in Python.
 
 ## Getting the website
 
 !!! tip "No GitHub account? Download instead"
 
-    You do not need a GitHub account to try Jupyter Book. On the [template repository](https://github.com/bristol-glaciology/example-jupyterbook-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer. You can then follow the *Editing locally* steps below and preview your site. You only need an account if you later want to **publish** it online (the optional final step), in which case use the **fork** route instead.
+    You do not need a GitHub account to try Jupyter Book. On the [template repository](https://github.com/bristol-glaciology/example-jupyterbook-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer. You can then follow the *Editing locally* steps below and preview your site.
+    
+    You only need an account if you later want to **publish** it online (the optional final step), in which case **fork** the website using the instructions below.
 
-### Forking the repository
+### Forking the website from GitHub
 
 1. Navigate to the template repository:
 
@@ -48,7 +52,11 @@ This page shows how to quickly create an example website using [Jupyter Book](ht
      https://<your-github-username>.github.io/glacier-project
      ```
 
-1. Create the fork.
+5. Create the fork using the default options.
+
+![Fork interface](img/fork.png)
+
+**Remember to replace the text with** `https://<your-github-username>.github.io`
 
 ### Downloading the repository locally
 
@@ -132,11 +140,11 @@ To generate a print copy (for class notes or textbooks):
 jupyter book build --pdf
 ~~~
 
-### Publish to GitHub Pages (optional — requires a GitHub account)
+### Publish to GitHub Pages (optional, requires a GitHub account)
 
-Everything up to this point works without a GitHub account. Publishing your site online is the only step that needs one: you must have **forked** the template (rather than downloaded the ZIP) so that you have a repository to deploy from.
+Publishing your site online requires a GitHub account: you must have **forked** the template (rather than downloaded the ZIP) so that you have a repository to deploy from.
 
-JupyterBook has a built-in function to set up GitHub Pages deployment:
+To deploy to GitHub Pages:
 
 ~~~bash
 jupyter book init --gh-pages

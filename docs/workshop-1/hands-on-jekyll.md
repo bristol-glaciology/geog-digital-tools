@@ -28,9 +28,9 @@ The main tutorial below uses the **browser route**: no software to install and n
 
 GitHub is a free website that stores your project and can publish it online for you, through a feature called [GitHub Pages](https://docs.github.com/en/pages). For the browser route, a free account is the only setup you need.
 
-!!! tip "You do not need to learn \"Git\" to follow this tutorial"
+!!! tip "You do not need to learn "Git" to follow this tutorial"
 
-    You may have heard that GitHub involves a command line and cryptic commands like `commit`, `push` and `clone`. **You can ignore all of that here.** Everything below is done by clicking buttons and typing in your browser.
+    Everything below is done by clicking buttons and typing in your browser.
 
 !!! warning "You'll need a free GitHub account"
 
@@ -50,7 +50,7 @@ Navigate to the example repository and click the **Fork** button in the top-righ
 
     For this tutorial, your repository **must** be named `<your-github-username>.github.io`.
 
-    For example, if your GitHub username is `jane-smith`, your repository should be called `jane-smith.github.io`.
+    For example, if your GitHub username is `alice`, your repository should be called `alice.github.io`.
 
 This naming convention is special. GitHub Pages automatically publishes repositories with this name at:
 
@@ -60,6 +60,9 @@ https://<your-github-username>.github.io
 
 When creating the fork, you can leave the default options selected. Once the fork has completed, you should find yourself in your own copy of the repository. Any changes you make from this point onwards will only affect your website.
 
+![Fork interface](img/fork.png)
+
+**Remember to replace the text with** `https://<your-github-username>.github.io`
 
 ## Constructing the Website
 
@@ -200,7 +203,11 @@ For most academic personal websites, the user-site approach described in this tu
 
 ## Alternative: build locally (no GitHub account needed)
 
-The workflow above edits files directly on GitHub through the web interface — the easiest route, but it requires a (free) GitHub account. If you would rather **not** create an account, you can instead download the template and build the site on your own computer. You only ever need an account if and when you decide to publish online.
+The workflow above edits files directly on GitHub through the web interface: the easiest route, but it requires a (free) GitHub account. If you would rather **not** create an account, you can instead download the template and build the site on your own computer. You only ever need an account if and when you decide to publish online.
+
+!!! warning "You'll need to use the command line"
+
+    In Windows this will be Powershell, in MacOS or Linux this will be your Terminal.
 
 This local route also has advantages even if you do have an account: it is faster when making many edits or experimenting with layouts, since you can preview changes instantly before pushing them.
 
@@ -241,16 +248,16 @@ Building the site on your own computer needs **Ruby** (the language Jekyll is wr
 
 === "With a native Ruby install"
 
-    The conventional route is to install Ruby directly:
+    The conventional route is to follow the official Jekyll documentation:
 
-    - **macOS:** the cleanest option is [Homebrew](https://brew.sh): `brew install ruby`. (The Ruby that ships with macOS is old and awkward for installing gems, so a Homebrew Ruby is recommended.)
-    - **Windows:** download and run [RubyInstaller](https://rubyinstaller.org/), choosing the version **with the DevKit** — this includes the build tools Jekyll needs.
-    - **Linux:** install Ruby and its development headers via your package manager, e.g. `sudo apt install ruby-full build-essential` on Debian/Ubuntu.
+    - [**macOS**](https://jekyllrb.com/docs/installation/macos/)
+    - [**Windows**](https://jekyllrb.com/docs/installation/windows/)
+    - [**Linux**](https://jekyllrb.com/docs/installation/ubuntu/)
 
     Then install Jekyll and Bundler:
 
     ```bash
-    gem install bundler jekyll
+    gem install jekyll bundler
     ```
 
 Now, from inside the website folder, install the site's own dependencies (the extra gems listed in its `Gemfile`):
@@ -264,7 +271,7 @@ bundle install
 Run:
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
 
 Jekyll will build the site and start a local web server, usually available at:

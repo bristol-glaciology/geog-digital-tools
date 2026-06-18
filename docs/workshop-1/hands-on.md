@@ -10,7 +10,7 @@ All three paths follow the same three stages:
 2. **Edit and preview on your own computer** — install the tool, make your changes, and preview the site locally. No account needed.
 3. **Publish online — optional** — put your site on the web with GitHub Pages. This is the **only** stage that requires a GitHub account.
 
-In other words, you can get a working website running on your laptop today without any GitHub account, and only sign up later if and when you want to publish.
+You can get a working website running on your laptop today without any GitHub account, and only sign up later if and when you want to publish.
 
 !!! tip "Two routes to an easy start"
 
