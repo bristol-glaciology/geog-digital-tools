@@ -13,38 +13,40 @@ We will create this by replicating a minimal personal website that already exist
 
 ## Two ways to build your site
 
-There are two ways to follow this tutorial. **Neither requires any prior experience with Git or the command line.** Pick whichever suits you:
+Pick whichever suits you. **Neither requires git experience or command line.** 
 
-|                       | In your browser *(recommended for beginners)*       | On your own computer                                  |
-| --------------------- | --------------------------------------------------- | ----------------------------------------------------- |
-| **GitHub account?**   | Yes — free, takes two minutes                       | Not needed                                            |
-| **Install anything?** | No                                                  | Yes — Ruby + Bundler                                  |
+|                       | In your browser *(recommended for beginners)* | On your own computer                  |
+| --------------------- | -------- | ----- |
+| **GitHub account?**   | Yes (free, 2 minutes)                       | Not needed                                            |
+| **Install anything?** | No                                  | Yes (Ruby + Bundler)                                  |
 | **Command line?**     | Never                                               | A little                                              |
-| **Best if…**          | you're new to all this and want a site online today | you'd rather not create an account, or want to work offline |
+| **Best if…**          | New to this, want a site online today | Don't want an account, or prefer offline work |
 
-The main tutorial below uses the **browser route**: no software to install and no command line — you just click and type on the GitHub website. If you would prefer to work offline without an account, skip ahead to [Build locally](#alternative-build-locally-no-github-account-needed).
+The main tutorial uses the **browser route**: no software, no command line—just click and type on GitHub. To work offline without an account, skip to [Build locally](#alternative-build-locally-no-github-account-needed).
 
 ## Setting up: your GitHub account
 
-GitHub is a free website that stores your project and can publish it online for you, through a feature called [GitHub Pages](https://docs.github.com/en/pages). For the browser route, a free account is the only setup you need.
+GitHub stores your project and publishes it via [GitHub Pages](https://docs.github.com/en/pages) for free. For the browser route, create a free account.
 
-!!! tip "You do not need to learn "Git" to follow this tutorial"
+!!! tip "You don't need to learn Git to follow this tutorial"
 
-    Everything below is done by clicking buttons and typing in your browser.
+    Everything below is done by clicking and typing in your browser.
 
 !!! warning "You'll need a free GitHub account"
 
-    If you don't have one yet, [create one now](https://github.com/signup) — it only takes a couple of minutes. Don't want an account at all? Use the [build-locally route](#alternative-build-locally-no-github-account-needed) instead.
+    [Create one now](https://github.com/signup) in two minutes. Don't want one? Use the [build-locally route](#alternative-build-locally-no-github-account-needed).
 
 !!! note "Already comfortable with Git?"
 
-    If you already know your way around Git and GitHub, you are welcome to use the command line or [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) today instead of the web interface. To learn the fundamentals properly in your own time, GitHub's [Hello World introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world) is a good starting point.
+    Use the command line or [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) if you prefer. For fundamentals, see [GitHub's Hello World intro](https://docs.github.com/en/get-started/start-your-journey/hello-world).
 
 ## Forking the website from GitHub
 
-Rather than creating a website from scratch, we will start by creating our own copy of the example repository. On GitHub, this process is called **forking**.
+Create your own copy of the example repository (called **forking**), instead of creating a website from scratch:
 
-Navigate to the example repository and click the **Fork** button in the top-right corner of the page. GitHub will then guide you through creating your own copy of the repository under your personal account.
+1. Go to the [example repository](https://github.com/bristol-glaciology/example-jekyll-website).
+2. Click **Fork** (top-right).
+3. GitHub guides you through creating your own copy in your own account.
 
 !!! warning "Repository Name"
 
@@ -66,7 +68,6 @@ When creating the fork, you can leave the default options selected. Once the for
 
 ## Constructing the Website
 
-
 ### The website repo
 
 The repository contains a number of files and folders, but only a few are important for getting started.
@@ -77,13 +78,11 @@ The repository contains a number of files and folders, but only a few are import
 * `README.md` provides an introduction to the repository and some useful links.
 * `Gemfile` lists the software packages required to build the site locally.
 
-You do not need to understand everything in the repository immediately. For this workshop, most of your time will be spent editing files within `_pages/`, uploading images to `assets/images/`, and updating information within `_config.yml`.
+You do not need to understand everything in the repository immediately. For this workshop, most of your time will be spent editing `_pages/`, uploading images to `assets/images/`, and updating `_config.yml`.
 
 ### Configuring the website (`_config.yml`)
 
-The `_config.yml` file controls many aspects of how the website is built and displayed.
-
-The file uses the YAML format. YAML stores information as simple key–value pairs:
+`_config.yml` controls how the website builds and displays. It uses YAML format which stores simple key-value pairs:
 
 ```yaml
 title: My Website
@@ -92,28 +91,24 @@ email: jane.smith@university.ac.uk
 ```
 
 You do not need to understand YAML in detail for this workshop. In most cases, you will simply replace the example values with your own information.
+To edit a file with GitHub's web interface:
+1. Click on the file name.
+2. Click the pencil (**Edit this file**) button top-right corner.
+3. Make your changes.
+4. Click **Commit changes...** to save them.
+5. Accept the default options and commit directly to the `main` branch.
 
-To edit a file within the GitHub web interface:
+Open `_config.yml`. Update your name, biography, affiliation, and links. Most values appear automatically throughout the site, so it is worth replacing the example information with your own.
 
-1. Navigate to the file within the repository.
-2. Click on the file name to open it.
-3. Select the pencil (**Edit this file**) button in the top-right corner.
-4. Make your changes.
-5. Select **Commit changes...** to save them.
-
-When prompted, you can accept the default options and commit directly to the `main` branch.
-
-Open `_config.yml` and update the fields describing the website owner, including your name, biography, affiliation, links, and other personal details. Many of these values are used automatically throughout the site, so it is worth spending a few minutes replacing the example information with your own.
-
-The example configuration only includes a subset of the available options. If you wish to customise the website further, the Minimal Mistakes documentation contains [information about the full configuration file](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) and all available settings.
+The example configuration only includes a subset of the available options. See [Minimal Mistakes docs](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) for all options.
 
 ### Editing pages
 
-Most website content is stored as Markdown files within the `_pages/` directory.
+Most content is stored in Markdown files in `_pages/`.
 
 To edit a page, navigate to the relevant file and click the pencil (**Edit this file**) button. The file contents can then be modified directly within GitHub.
 
-As a starting point, update the existing pages with your own information. For example, you may wish to:
+Update the existing pages with your own information. You may wish to:
 
 * Replace the placeholder biography text.
 * Add information about your research interests.
@@ -122,21 +117,16 @@ As a starting point, update the existing pages with your own information. For ex
 
 Once you have made a change, select **Commit changes...** to save it.
 
-You may find it useful to keep a second browser tab open showing the website itself, allowing you to refresh the page and quickly check how your changes appear once they have been published.
+You can keep a second browser tab open showing the website itself. You can refresh the page and quickly check how your changes appear.
 
 ### Adding pages
 
-New pages can be added directly through the GitHub web interface.
+Create a new page:
+1. Go to `_pages/`.
+2. Click **Add file** → **Create new file**.
+3. Name it e.g. `teaching.md`.
 
-Navigate to the `_pages/` directory and select **Add file** → **Create new file**. Give the file a suitable name ending in `.md`, for example:
-
-```text
-teaching.md
-```
-
-Each page begins with a block of YAML known as **front matter**. This defines information about the page and how it should be displayed.
-
-A minimal page might look like:
+Each page begins with a block of YAML known as **front matter**. This defines information about the page and how it should be displayed:
 
 ```yaml
 ---
@@ -148,45 +138,43 @@ layout: single
 Content goes here.
 ```
 
-The `layout` option controls the overall appearance of the page. Minimal Mistakes provides several layouts for different purposes, although for this workshop we will use the `single` layout throughout.
+The `layout` option controls appearance. For this workshop, use the `single` layout.
 
-Further information on creating pages can be found in the Minimal Mistakes [pages documentation](https://mmistakes.github.io/minimal-mistakes/docs/pages/) and [layouts documentation](https://mmistakes.github.io/minimal-mistakes/docs/layouts/).
-
-If you would like the page to appear in the site's navigation menu, you will also need to edit `_data/navigation.yml` and add a new navigation entry. The Minimal Mistakes documentation contains further information on [navigation configuration](https://mmistakes.github.io/minimal-mistakes/docs/navigation/).
+To add a page to the navigation menu, edit `_data/navigation.yml` and add an entry. See [Minimal Mistakes pages docs](https://mmistakes.github.io/minimal-mistakes/docs/pages/) and [layouts docs](https://mmistakes.github.io/minimal-mistakes/docs/layouts/) for more information.
 
 ### Adding images and other files
 
-Images can be uploaded directly through the GitHub web interface.
+Upload images through the GitHub web interface:
+1. Go to `assets/images/`.
+2. Click **Add file** → **Upload files**.
+3. Drag-and-drop or browse files.
 
-Navigate to the `assets/images/` directory and select **Add file** → **Upload files**. You can then drag-and-drop images from your computer or browse for them manually.
-
-Once uploaded, images can be included within pages using standard Markdown syntax:
+Include uploaded images in pages using Markdown:
 
 ```markdown
 ![Description of image](/assets/images/my-image.jpg)
 ```
 
-As with any other change, remember to commit the uploaded files when prompted.
+Remember to commit uploaded files when prompted.
 
 ## Publishing the website on GitHub Pages
 
-GitHub Pages must be enabled before the website becomes publicly accessible.
-
-Open the repository **Settings** page and select **Pages** from the navigation menu. Under **Build and deployment**, choose **Deploy from a branch** if it is not already selected. The default branch (`main`) should normally be selected automatically.
+Enable GitHub Pages to make the website publicly accessible:
+1. Go to repository **Settings**.
+2. Select **Pages** from the menu.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Select `main` branch.
 
 You can find detailed instructions in the official [GitHub Pages documentation](https://docs.github.com/en/pages).
+GitHub saves your settings and builds the site. Check progress in the **Actions** tab as the first time make take a few minutes to complete.
 
-After saving the settings, GitHub will begin building the website. The first build may take a few minutes to complete.
-
-You can monitor the progress of the build from the **Actions** tab of the repository. Once deployment has completed successfully, your website should be available at:
-
+Once complete, your website will be available at:
 ```text
 https://<your-github-username>.github.io
 ```
 
-Repositories named `<your-github-username>.github.io` are known as **user sites**. Each GitHub account can have one user site, and it is published directly at the root GitHub Pages address.
-
-Additional websites can be created using other repository names. These are known as **project sites** and are published beneath the user site URL. For example, a repository called:
+Repositories named `<username>.github.io` are **user sites**, published at the root GitHub Pages address. Each account can have one user site. Other repositories are **project sites**, published under the user site's URL.
+For example, a repository called:
 
 ```text
 research-project
@@ -198,12 +186,12 @@ would be published at:
 https://<your-github-username>.github.io/research-project/
 ```
 
-For most academic personal websites, the user-site approach described in this tutorial is the simplest option. It provides a clean URL, requires no additional configuration, and is generally the approach used for personal academic websites.
+For most academic personal websites, the user-site approach is simplest. It provides a clean URL, requires minimal setup, and is standard for personal academic sites.
 
 
 ## Alternative: build locally (no GitHub account needed)
 
-The workflow above edits files directly on GitHub through the web interface: the easiest route, but it requires a (free) GitHub account. If you would rather **not** create an account, you can instead download the template and build the site on your own computer. You only ever need an account if and when you decide to publish online.
+The workflow above edits files on GitHub through the web interface, which is the easiest way, but requires a free account. If you'd rather not have an account, download the template and build locally. You only need an account to publish online.
 
 !!! warning "You'll need to use the command line"
 
@@ -213,7 +201,7 @@ This local route also has advantages even if you do have an account: it is faste
 
 ### Get the template
 
-- **No account:** on the [example repository](https://github.com/bristol-glaciology/example-jekyll-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer.
+- **No account:** click **Code** → **Download ZIP** on the [example repository](https://github.com/bristol-glaciology/example-jekyll-website), then unzip on your computer.
 - **With an account:** clone your fork instead, so you can push changes back and publish later:
 
     ```bash

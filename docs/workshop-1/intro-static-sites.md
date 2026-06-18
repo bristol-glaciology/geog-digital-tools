@@ -2,30 +2,30 @@
 
 ## What is a "static" website?
 
-When you visit a website, your browser receives HTML, CSS, and JavaScript files and renders them into the page you see. The question is: *when* are those files created?
+Your browser generates HTML, CSS, and JavaScript to render pages when you visit a website. The question is: *when* does this happen?
 
-A **dynamic** website — think WordPress, university intranet portals, or online banking — generates each page *on demand*, the moment someone visits. A server runs code, queries a database, assembles the HTML, and sends it back. This is powerful but comes with a cost: you need a running server, a database, regular security updates, and something to go wrong at 2am before a grant deadline.
+**Dynamic** websites generate each page on demand (WordPress, university portals, online banking). A server runs code, queries a database, and sends back HTML. This is powerful but requires maintenance: running servers, databases, security updates, and something will still go wrong at 2am before a grant deadline.
 
-A **static** website is the opposite: all the HTML files are pre-built *in advance* and simply served as-is when someone visits. There is no server-side processing, no database, nothing to maintain. The page for this workshop was built on a laptop, uploaded to GitHub, and is now served for free from their servers to anyone in the world.
+**Static** websites build all HTML *in advance* and serve it as-is. No server-side processing, no database, nothing to maintain. The page for this workshop was built on a laptop, uploaded to GitHub, and is now served for free from their servers to anyone in the world.
 
-The trade-off is interactivity: static sites cannot, by default, do things like user logins, dynamic search, or live data feeds. For most academic use cases — course notes, documentation, personal websites, project pages — this is not a limitation at all.
+The trade-off: static sites can't do logins, dynamic search, or live data feeds. For most academic use (course notes, documentation, personal pages, project sites) this is not a limitation.
 
 ## Static site *generators*
 
-Writing HTML by hand is tedious. A **static site generator** lets you write content in a human-friendly format (usually [Markdown](markdown-and-notebooks.md) or Jupyter Notebooks) and takes care of converting it into a full website — navigation, styling, search, and all.
+Writing HTML by hand is tedious. A **static site generator** converts your content (usually [Markdown](markdown-and-notebooks.md) or Jupyter Notebooks) into a complete website with navigation, styling, search, and all.
 
-The landscape of static site generators is large. [StaticGen](https://jamstack.org/generators/) lists hundreds of them. They differ in their programming language, templating system, built-in features, and the kind of content they are designed for. The good news is that they all share the same core idea, so switching between them is not as daunting as it sounds.
+Hundreds of static site generators exist (see [StaticGen](https://jamstack.org/generators/)), differing in language, templating, built-in features, and content type. The good news is that they all share the same core idea, so switching between them is straightforward.
 
 ## What is *not* a static site generator?
 
-Before getting into static site generators, it is worth acknowledging the alternatives — because some academics already use one of them:
+Other platforms exist:
 
 - **WordPress** — the most widely used website platform in the world. Powers a huge number of university department and research group pages. Powerful and flexible, but requires paid hosting, regular maintenance and security updates, and a certain amount of ongoing IT overhead. Content is locked in a database, not in plain text files you can easily control.
 - **University or institutional CMS** — many universities provide a content management system for staff pages. Easy to get started, but typically very limited in customisation, slow to update, and not portable if you move institutions.
 - **Drag-and-drop builders (Wix, Squarespace, Google Sites)** — low barrier to entry and polished templates, but usually cost money, lock your content into a proprietary platform, and offer little control over structure or automation.
 - **Hiring a web developer** — a perfectly reasonable option for a large, funded project, but expensive and creates a dependency: every update goes through someone else.
 
-Static site generators occupy a different niche: free, portable, version-controlled, and requiring no ongoing maintenance — at the cost of a small initial learning curve. For individual researchers, small groups, or anyone who already works with plain text files and version control, they are often the better fit.
+Static site generators fit a different niche: free, portable, version-controlled, maintenance-free—at the cost of a small learning curve. For individual researchers, small groups, or anyone who already works with plain text and version control, they're often the better choice.
 
 ## The tools we cover today
 

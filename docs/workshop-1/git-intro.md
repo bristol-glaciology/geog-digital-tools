@@ -1,22 +1,23 @@
 # 6. Git and GitHub — the basics
 
-Publishing a website with any of the tools in this workshop ultimately means putting your files somewhere on the internet. The standard way to do this — and the one all the tools here are built around — is [GitHub](https://github.com), which requires a basic understanding of **Git**.
+Publishing a website means putting files online. The standard way - and the one all these tools use - is [GitHub](https://github.com). It requires basic understanding of **Git**.
 
 ## What is Git?
 
-Git is a **version control system**: software that tracks changes to files over time. Every time you save a meaningful change, you create a *commit* — a snapshot of your project at that moment. This means you can see the full history of your work, revert to any previous state, and collaborate with others without overwriting each other's changes.
+Git is a **version control system**: software that tracks file changes over time. Each meaningful save creates a *commit*: a snapshot of your project. You can see a full history, revert to any earlier state, and collaborate without overwriting each other's work.
 
-Git was designed for code, but it works equally well for any collection of text files — including Markdown websites.
+Git was designed for code, but works for any text files, including Markdown websites.
 
 ## Git vs GitHub
 
-**Git** is the tool; **GitHub** is a website that hosts Git repositories in the cloud and adds collaboration features on top. When you push your website files to a GitHub repository, GitHub can serve them publicly as a website via [GitHub Pages](https://docs.github.com/en/pages) — for free.
+**Git** is the tool; **GitHub** is a website that hosts Git repositories in the cloud and adds collaboration. Push your website files to GitHub, and [GitHub Pages](https://docs.github.com/en/pages) serves them publicly for free.
 
 ## Do I need to learn Git properly?
 
-For the hands-on session, the answer is **no** — the [tutorial](hands-on.md) works entirely through the GitHub web interface. You click, type, and commit without ever opening a terminal.
+For the hands-on session: **no**, the [tutorial](hands-on.md) works entirely through the GitHub web interface. Click, type, commit, with no terminal needed.
 
-That said, Git is probably the most transferable technical skill in this workshop. If you plan to use any of these tools regularly, investing a few hours in learning the basics will pay off quickly. A good starting point is [GitHub's own introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world), or the [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) app if you prefer a graphical interface over the command line.
+That said, Git is the most transferable technical skill in this workshop. A few hours learning the basics pays off quickly if you use these tools regularly. Start with [GitHub's own introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world), or try [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) if you prefer to point-and-click.
 
 !!! note "This is the most technical part of the workshop"
-    Git has a steeper learning curve than Markdown or `mkdocs serve`. If you get stuck during the hands-on session, ask — this is exactly where we expect people to need help.
+
+    Git has a steeper learning curve than Markdown or `mkdocs serve`. If you get stuck during the hands-on session, ask: this is where we expect people to need help.

@@ -1,10 +1,10 @@
 # Hands-on tutorial
 
-This session is unstructured — pick the path that matches the tool you want to explore and work at your own pace. Tom and Fabien are on hand to help.
+Pick the path matching the tool you want to explore and work at your own pace. Tom and Fabien can help.
 
 ## How each path works
 
-All three paths follow the same three stages:
+Each path follows the same three stages:
 
 1. **Get the template** — either **download it as a ZIP** (no GitHub account needed) or **fork** it on GitHub (needs a free account).
 2. **Edit and preview on your own computer** — install the tool, make your changes, and preview the site locally. No account needed.

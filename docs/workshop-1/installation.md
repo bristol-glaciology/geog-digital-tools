@@ -2,20 +2,20 @@
 
 MkDocs and JupyterBook are Python tools — you need Python installed on your computer before following sections 3.1 and 3.2. This page walks you through two options and then shows you how to install the tools themselves.
 
-!!! warning "Jekyll users: nothing to install here"
-    If you plan to follow the [Jekyll route](jekyll.md), you do not need Python at all. The [hands-on tutorial](hands-on.md) works entirely through the GitHub web interface — no local software required. You can skip this page.
+!!! warning "Jekyll users: skip this page"
+    If you're following the [Jekyll route](jekyll.md), you don't need Python. The [hands-on tutorial](hands-on.md) works entirely through the GitHub web interface with no local software needed.
 
-!!! note "First time? No rush."
-    If the instructions below look daunting, don't worry — you can skip this for now and come to the workshop day. We'll have a few helpers on hand to get everyone set up at the start of the session.
+!!! note "First time? No rush"
+    The instructions below can look daunting. Skip this and come to the workshop day. We'll help everyone get set up on the day.
 
 !!! tip "Already have Python?"
-    If you already have Anaconda, Miniconda, Conda, or a similar Python distribution working on your machine, skip straight to [Installing the tools](#installing-the-tools).
+    If you have Anaconda, Miniconda, Conda, or similar working on your machine, skip to [Installing the tools](#installing-the-tools).
 
 ## Installing Python
 
 ### Option 1 — Micromamba (recommended)
 
-[Micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is a tiny, standalone package manager. Unlike Anaconda, it ships as a single small binary — no pre-installed packages, no 3 GB base environment. It is fast, takes up very little space, and is the approach we use with our own students.
+[Micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is a tiny, standalone package manager. Unlike Anaconda, it ships as a single small binary: no pre-installed packages, no 3GB base environment. It's fast, takes minimal space, and is what we use with students.
 
 === "Windows"
 
@@ -46,13 +46,13 @@ MkDocs and JupyterBook are Python tools — you need Python installed on your co
 micromamba --version
 ```
 
-You should see a version number (e.g. `2.1.0`). If you see "command not found", close and reopen the terminal and try again.
+You should see a version number (e.g., `2.1.0`). If you see "command not found", close and reopen the terminal and try again.
 
 ---
 
 ### Option 2 — Anaconda
 
-[Anaconda](https://www.anaconda.com/download) is a large, all-in-one Python distribution with hundreds of pre-installed packages and a graphical interface (Anaconda Navigator). It installs around 3 GB of software — far more than you need for MkDocs or JupyterBook — but it works perfectly well and may feel more approachable if you prefer a graphical installer.
+[Anaconda](https://www.anaconda.com/download) is a large, all-in-one Python distribution with hundreds of pre-installed packages and a graphical interface. It installs ~3GB of software, much more than needed for MkDocs or JupyterBook, but works perfectly and may feel more approachable if you prefer a GUI installer.
 
 Download and run the installer from [anaconda.com/download](https://www.anaconda.com/download).
 
@@ -63,7 +63,7 @@ Download and run the installer from [anaconda.com/download](https://www.anaconda
 
 ## Installing the tools
 
-Once Python is set up, install whichever tool you plan to use. If you are not sure yet, install both — they can coexist without issue.
+Once Python is set up, install whichever tool you plan to use. If you're unsure, install both—they coexist without issue.
 
 ### MkDocs Material
 

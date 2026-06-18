@@ -2,7 +2,7 @@
 
 !!! warning "I'm not a lawyer"
 
-    This is a short, non-expert overview of things worth thinking about when you put a site online — not legal advice. If in doubt, check your institution's guidance or ask someone who *is* a lawyer.
+    This is a brief, non-expert overview. If in doubt, check your institution's guidance or ask a real lawyer.
 
 Publishing a website comes with a few small responsibilities. For a personal academic site none of this is onerous, but it is worth knowing about.
 
@@ -12,11 +12,11 @@ It is good practice to include a short **privacy policy** stating what data (if 
 
 ## Data management
 
-The simplest legal position is to collect as little as possible. A plain static site that collects *nothing* has almost nothing to manage. As soon as you add forms, comments, or analytics, be deliberate: store only what you need, and only for as long as you need it.
+Simplest approach: collect as little as possible. A plain static site that collects *nothing* has almost nothing to manage. Forms, comments, or analytics need deliberate choices: store only what you need, only for as long as you need it.
 
 ## Cookies and web analytics
 
-Once your site is live, you may want to know how many people visit it and which pages they read. All the tools in this workshop support analytics — MkDocs Material has [built-in configuration](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/) for it, and Jekyll's Minimal Mistakes theme does too; for JupyterBook you add a small script snippet to the HTML header.
+Once live, you may want to track visitor numbers and page views. All tools here support analytics—MkDocs Material has [built-in configuration](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/), Jekyll's Minimal Mistakes does too, and JupyterBook uses a script snippet.
 
 The default choice is often **Google Analytics**, which is free and widely supported. There are two reasons to think twice before using it. The first is practical: GA drops tracking cookies in visitors' browsers, which requires a cookie consent banner under GDPR — an annoying addition to an otherwise clean academic site. Cookie banners are not always supported out-of-the-box via the workflows we have shown here, often requiring [custom or community implementations](https://github.com/karstenj/cookie-consent-banner). The second is ethical: by embedding GA, you are sending detailed behavioural data about your readers to Google, who uses it for their own purposes (ad targeting, profiling).
 
@@ -28,4 +28,4 @@ For a personal academic website with modest traffic, any of these works. For a p
 
 **Make sure you own, or are licensed to use, every image, font, icon and video you put on your site** — and any substantial text you did not write yourself.
 
-Do not simply drop images off a Google search onto your pages. Instead, use your own photos, public-domain or Creative Commons material (respecting any attribution requirements), or properly licensed assets. Getting this wrong is one of the easiest ways to land in genuine legal trouble, and one of the easiest to avoid.
+Don't drop images from Google search onto your pages. Use your own photos, public-domain or Creative Commons material (respecting attribution requirements), or properly licensed assets. Getting this wrong is one of the easiest ways to land in genuine trouble—and one of the easiest to avoid.
