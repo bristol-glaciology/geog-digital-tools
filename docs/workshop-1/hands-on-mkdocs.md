@@ -20,7 +20,9 @@ This page shows how to quickly create an example website using [MkDocs](https://
 
 !!! tip "No GitHub account? Download instead"
 
-    You do not need a GitHub account to try MkDocs. On the [template repository](https://github.com/bristol-glaciology/example-mkdocs-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer. You can then follow the *Editing locally* steps below and preview your site. You only need an account if you later want to **publish** it online (the optional final step), in which case use the **fork** route instead.
+    You do not need a GitHub account to try MkDocs. On the [template repository](https://github.com/bristol-glaciology/example-mkdocs-website), click the green **Code** button → **Download ZIP**, then unzip it on your computer. You can then follow the *Editing locally* steps below and preview your site.
+    
+    You only need an account if you later want to **publish** it online (the optional final step), in which case **fork** the website using the instructions below.
 
 ### Forking the website from GitHub
 
