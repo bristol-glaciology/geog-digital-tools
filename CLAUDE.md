@@ -15,6 +15,7 @@ Workshop date: **19 June 2026**. About 30 participants, mix of technical backgro
 - Opinionated intro: tell people what we use and why, not an exhaustive survey
 - Get people to official docs ASAP rather than duplicating them
 - Low-tech-skill audience: avoid jargon, assume no git/command-line knowledge for the main path
+- DEI: use active voice, simpler sentences, and well-ordered clauses
 
 ### File structure (all under `docs/workshop-1/`)
 
