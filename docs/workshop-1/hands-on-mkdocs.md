@@ -109,8 +109,6 @@ Add content (markdown files, jupyter notebook, and image assets) inside the `./d
 
 Edit the `nav` section of `mkdocs.yml` to ensure that these are appropriately arranged within the site and navbar.
 
-If ytou
-
 ## Building and Pushing
 
 ### Running Locally
