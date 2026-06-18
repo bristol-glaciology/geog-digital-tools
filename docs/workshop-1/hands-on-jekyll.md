@@ -50,7 +50,7 @@ Navigate to the example repository and click the **Fork** button in the top-righ
 
     For this tutorial, your repository **must** be named `<your-github-username>.github.io`.
 
-    For example, if your GitHub username is `jane-smith`, your repository should be called `jane-smith.github.io`.
+    For example, if your GitHub username is `alice`, your repository should be called `alice.github.io`.
 
 This naming convention is special. GitHub Pages automatically publishes repositories with this name at:
 
@@ -62,7 +62,7 @@ When creating the fork, you can leave the default options selected. Once the for
 
 ![Fork interface](img/fork.png)
 
-**Remember to replace the text with** ``https://<your-github-username>.github.io``
+**Remember to replace the text with** `https://<your-github-username>.github.io`
 
 ## Constructing the Website
 
@@ -248,11 +248,11 @@ Building the site on your own computer needs **Ruby** (the language Jekyll is wr
 
 === "With a native Ruby install"
 
-    The conventional route is to install Ruby directly:
+    The conventional route is to follow the official Jekyll documentation:
 
-    - **macOS:** the cleanest option is [Homebrew](https://brew.sh): `brew install ruby`. (The Ruby that ships with macOS is old and awkward for installing gems, so a Homebrew Ruby is recommended.)
-    - **Windows:** follow the official documentation [here](https://jekyllrb.com/docs/installation/windows/)
-    - **Linux:** follow the official documentation [here](https://jekyllrb.com/docs/installation/ubuntu/).
+    - [**macOS**](https://jekyllrb.com/docs/installation/macos/)
+    - [**Windows**](https://jekyllrb.com/docs/installation/windows/)
+    - [**Linux**](https://jekyllrb.com/docs/installation/ubuntu/)
 
     Then install Jekyll and Bundler:
 
