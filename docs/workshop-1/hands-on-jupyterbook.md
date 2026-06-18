@@ -8,9 +8,9 @@
 
 This page shows how to create an example Jupyter Book site from a template on the [`bristol-glaciology` GitHub organisation](https://github.com/bristol-glaciology/example-jupyterbook-website). [See a preview here.](https://bristol-glaciology.github.io/example-jupyterbook-website/)
 
-!!! warning "Basic git and Python knowledge recommended"
+!!! warning "Basic git and Python knowledge required"
 
-    This tutorial assumes a GitHub account and familiarity with `git` and GitHub repos. If you're less experienced, try the [GitHub docs introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world) or [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop).
+    This tutorial recommends a GitHub account and familiarity with `git` and GitHub repos. If you're less experienced, try the [GitHub docs introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world) or [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop).
     
     For now, the [Jekyll guide](hands-on-jekyll.md) works entirely through the GitHub web GUI with no git or command line.
 
