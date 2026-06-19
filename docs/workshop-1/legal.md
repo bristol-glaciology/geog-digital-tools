@@ -28,4 +28,4 @@ For a personal academic website with modest traffic, any of these works. For a p
 
 **Make sure you own, or are licensed to use, every image, font, icon and video you put on your site** — and any substantial text you did not write yourself.
 
-Don't drop images from Google search onto your pages. Use your own photos, public-domain or Creative Commons material (respecting attribution requirements), or properly licensed assets. Getting this wrong is one of the easiest ways to land in genuine trouble—and one of the easiest to avoid.
+Don't drop images from Google search onto your pages. Use your own photos, public-domain or Creative Commons material (respecting attribution requirements), or properly licensed assets. Lawsuit threats because of misuse of copyrighted images are frequent.
