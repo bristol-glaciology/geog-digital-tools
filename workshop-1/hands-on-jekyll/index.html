@@ -1,0 +1,1727 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open-source tools for outreach, teaching, and research documentation — Bristol Glaciology Centre">
+      
+      
+        <meta name="author" content="Bristol Glaciology Centre">
+      
+      
+        <link rel="canonical" href="https://bristol-glaciology.github.io/geog-digital-tools/workshop-1/hands-on-jekyll/">
+      
+      
+        <link rel="prev" href="../hands-on/">
+      
+      
+        <link rel="next" href="../hands-on-mkdocs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>7.2 Jekyll - Geog Digital Tools & Infrastructure Workshop Series</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+3:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans 3";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-minimal-workflow-to-create-a-jekyll-site-hosted-by-github-pages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Geog Digital Tools &amp; Infrastructure Workshop Series" class="md-header__button md-logo" aria-label="Geog Digital Tools & Infrastructure Workshop Series" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Geog Digital Tools & Infrastructure Workshop Series
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7.2 Jekyll
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bristol-glaciology/geog-digital-tools" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Workshop 1
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Geog Digital Tools &amp; Infrastructure Workshop Series" class="md-nav__button md-logo" aria-label="Geog Digital Tools & Infrastructure Workshop Series" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Geog Digital Tools & Infrastructure Workshop Series
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bristol-glaciology/geog-digital-tools" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workshop 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro-static-sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Static site generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown-and-notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Markdown & Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. The tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 MkDocs & Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyterbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 JupyterBook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sphinx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 Sphinx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Legal aspects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Git basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Hands-on tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Hands-on tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.1 Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.2 Jekyll
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.2 Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-ways-to-build-your-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two ways to build your site
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up: your GitHub account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking-the-website-from-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forking the website from GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-the-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructing the Website
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructing the Website">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-website-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The website repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-website-_configyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the website (_config.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-images-and-other-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding images and other files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-the-website-on-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing the website on GitHub Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-build-locally-no-github-account-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative: build locally (no GitHub account needed)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative: build locally (no GitHub account needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get the template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-ruby-and-jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Ruby and Jekyll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-local-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start the local server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-changes-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Push changes to GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hands-on-mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.3 MkDocs & Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hands-on-jupyterbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.4 JupyterBook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-ways-to-build-your-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two ways to build your site
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up: your GitHub account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking-the-website-from-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forking the website from GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-the-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructing the Website
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructing the Website">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-website-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The website repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-website-_configyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the website (_config.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-images-and-other-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding images and other files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-the-website-on-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing the website on GitHub Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-build-locally-no-github-account-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative: build locally (no GitHub account needed)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative: build locally (no GitHub account needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get the template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-ruby-and-jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Ruby and Jekyll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-local-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start the local server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-changes-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Push changes to GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="a-minimal-workflow-to-create-a-jekyll-site-hosted-by-github-pages">A minimal workflow to create a Jekyll site hosted by Github pages<a class="headerlink" href="#a-minimal-workflow-to-create-a-jekyll-site-hosted-by-github-pages" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">External Documentation</p>
+<p>This page aims to provide a streamlined tutorial for GitHub Pages and Jekyll/Minimal Mistakes, but full documentation is also available online:</p>
+<ul>
+<li><a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Minimal Mistakes</a></li>
+<li><a href="https://docs.github.com/en/pages">GitHub Pages</a></li>
+</ul>
+</div>
+<p>This page shows how to quickly create a Jekyll website based on the <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide">Minimal Mistakes theme</a>. It is a common theme that you might see replicated across many personal academic websites (including <a href="https://fabienmaussion.info/">Fabien's</a> and <a href="https://trchudley.github.io/">Tom's</a>).</p>
+<p>We will create this by replicating a minimal personal website that already exists on the <code>bristol-glaciology</code> GitHub organisation. The repo is <a href="https://github.com/bristol-glaciology/example-jekyll-website">available here</a> and you can see how this appears once hosted <a href="https://bristol-glaciology.github.io/example-jekyll-website/">at the following link</a>.</p>
+<h2 id="two-ways-to-build-your-site">Two ways to build your site<a class="headerlink" href="#two-ways-to-build-your-site" title="Permanent link">&para;</a></h2>
+<p>Pick whichever suits you. <strong>Neither requires git experience or command line.</strong> </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>In your browser <em>(recommended for beginners)</em></th>
+<th>On your own computer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub account?</strong></td>
+<td>Yes (free, 2 minutes)</td>
+<td>Not needed</td>
+</tr>
+<tr>
+<td><strong>Install anything?</strong></td>
+<td>No</td>
+<td>Yes (Ruby + Bundler)</td>
+</tr>
+<tr>
+<td><strong>Command line?</strong></td>
+<td>Never</td>
+<td>A little</td>
+</tr>
+<tr>
+<td><strong>Best if…</strong></td>
+<td>New to this, want a site online today</td>
+<td>Don't want an account, or prefer offline work</td>
+</tr>
+</tbody>
+</table>
+<p>The main tutorial uses the <strong>browser route</strong>: no software, no command line—just click and type on GitHub. To work offline without an account, skip to <a href="#alternative-build-locally-no-github-account-needed">Build locally</a>.</p>
+<h2 id="setting-up-your-github-account">Setting up: your GitHub account<a class="headerlink" href="#setting-up-your-github-account" title="Permanent link">&para;</a></h2>
+<p>GitHub stores your project and publishes it via <a href="https://docs.github.com/en/pages">GitHub Pages</a> for free. For the browser route, create a free account.</p>
+<div class="admonition tip">
+<p class="admonition-title">You don't need to learn Git to follow this tutorial</p>
+<p>Everything below is done by clicking and typing in your browser.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">You'll need a free GitHub account</p>
+<p><a href="https://github.com/signup">Create one now</a> in two minutes. Don't want one? Use the <a href="#alternative-build-locally-no-github-account-needed">build-locally route</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Already comfortable with Git?</p>
+<p>Use the command line or <a href="https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop">GitHub Desktop</a> if you prefer. For fundamentals, see <a href="https://docs.github.com/en/get-started/start-your-journey/hello-world">GitHub's Hello World intro</a>.</p>
+</div>
+<h2 id="forking-the-website-from-github">Forking the website from GitHub<a class="headerlink" href="#forking-the-website-from-github" title="Permanent link">&para;</a></h2>
+<p>Create your own copy of the example repository (called <strong>forking</strong>), instead of creating a website from scratch:</p>
+<ol>
+<li>Go to the <a href="https://github.com/bristol-glaciology/example-jekyll-website">example repository</a>.</li>
+<li>Click <strong>Fork</strong> (top-right).</li>
+<li>GitHub guides you through creating your own copy in your own account.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Repository Name</p>
+<p>For this tutorial, your repository <strong>must</strong> be named <code>&lt;your-github-username&gt;.github.io</code>.</p>
+<p>For example, if your GitHub username is <code>alice</code>, your repository should be called <code>alice.github.io</code>.</p>
+</div>
+<p>This naming convention is special. GitHub Pages automatically publishes repositories with this name at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://&lt;your-github-username&gt;.github.io
+</code></pre></div>
+<p>When creating the fork, you can leave the default options selected. Once the fork has completed, you should find yourself in your own copy of the repository. Any changes you make from this point onwards will only affect your website.</p>
+<p><img alt="Fork interface" src="img/fork.png" /></p>
+<p><strong>Remember to replace the text with</strong> <code>https://&lt;your-github-username&gt;.github.io</code></p>
+<h2 id="constructing-the-website">Constructing the Website<a class="headerlink" href="#constructing-the-website" title="Permanent link">&para;</a></h2>
+<h3 id="the-website-repo">The website repo<a class="headerlink" href="#the-website-repo" title="Permanent link">&para;</a></h3>
+<p>The repository contains a number of files and folders, but only a few are important for getting started.</p>
+<ul>
+<li><code>_pages/</code> contains the individual pages that make up the website.</li>
+<li><code>assets/images/</code> contains images and other media used throughout the site.</li>
+<li><code>_config.yml</code> contains the main website configuration.</li>
+<li><code>README.md</code> provides an introduction to the repository and some useful links.</li>
+<li><code>Gemfile</code> lists the software packages required to build the site locally.</li>
+</ul>
+<p>You do not need to understand everything in the repository immediately. For this workshop, most of your time will be spent editing <code>_pages/</code>, uploading images to <code>assets/images/</code>, and updating <code>_config.yml</code>.</p>
+<h3 id="configuring-the-website-_configyml">Configuring the website (<code>_config.yml</code>)<a class="headerlink" href="#configuring-the-website-_configyml" title="Permanent link">&para;</a></h3>
+<p><code>_config.yml</code> controls how the website builds and displays. It uses YAML format which stores simple key-value pairs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Website</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jane Smith</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jane.smith@university.ac.uk</span>
+</code></pre></div>
+<p>You do not need to understand YAML in detail for this workshop. In most cases, you will simply replace the example values with your own information.
+To edit a file with GitHub's web interface:
+1. Click on the file name.
+2. Click the pencil (<strong>Edit this file</strong>) button top-right corner.
+3. Make your changes.
+4. Click <strong>Commit changes...</strong> to save them.
+5. Accept the default options and commit directly to the <code>main</code> branch.</p>
+<p>Open <code>_config.yml</code>. Update your name, biography, affiliation, and links. Most values appear automatically throughout the site, so it is worth replacing the example information with your own.</p>
+<p>The example configuration only includes a subset of the available options. See <a href="https://mmistakes.github.io/minimal-mistakes/docs/configuration/">Minimal Mistakes docs</a> for all options.</p>
+<h3 id="editing-pages">Editing pages<a class="headerlink" href="#editing-pages" title="Permanent link">&para;</a></h3>
+<p>Most content is stored in Markdown files in <code>_pages/</code>.</p>
+<p>To edit a page, navigate to the relevant file and click the pencil (<strong>Edit this file</strong>) button. The file contents can then be modified directly within GitHub.</p>
+<p>Update the existing pages with your own information. You may wish to:</p>
+<ul>
+<li>Replace the placeholder biography text.</li>
+<li>Add information about your research interests.</li>
+<li>Update links to personal profiles and external websites.</li>
+<li>Add your own images.</li>
+</ul>
+<p>Once you have made a change, select <strong>Commit changes...</strong> to save it.</p>
+<p>You can keep a second browser tab open showing the website itself. You can refresh the page and quickly check how your changes appear.</p>
+<h3 id="adding-pages">Adding pages<a class="headerlink" href="#adding-pages" title="Permanent link">&para;</a></h3>
+<p>Create a new page:
+1. Go to <code>_pages/</code>.
+2. Click <strong>Add file</strong> → <strong>Create new file</strong>.
+3. Name it e.g. <code>teaching.md</code>.</p>
+<p>Each page begins with a block of YAML known as <strong>front matter</strong>. This defines information about the page and how it should be displayed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nn">---</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Teaching&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/teaching/</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nn">---</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="l l-Scalar l-Scalar-Plain">Content goes here.</span>
+</code></pre></div>
+<p>The <code>layout</code> option controls appearance. For this workshop, use the <code>single</code> layout.</p>
+<p>To add a page to the navigation menu, edit <code>_data/navigation.yml</code> and add an entry. See <a href="https://mmistakes.github.io/minimal-mistakes/docs/pages/">Minimal Mistakes pages docs</a> and <a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/">layouts docs</a> for more information.</p>
+<h3 id="adding-images-and-other-files">Adding images and other files<a class="headerlink" href="#adding-images-and-other-files" title="Permanent link">&para;</a></h3>
+<p>Upload images through the GitHub web interface:
+1. Go to <code>assets/images/</code>.
+2. Click <strong>Add file</strong> → <strong>Upload files</strong>.
+3. Drag-and-drop or browse files.</p>
+<p>Include uploaded images in pages using Markdown:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>![<span class="nt">Description of image</span>](<span class="na">/assets/images/my-image.jpg</span>)
+</code></pre></div>
+<p>Remember to commit uploaded files when prompted.</p>
+<h2 id="publishing-the-website-on-github-pages">Publishing the website on GitHub Pages<a class="headerlink" href="#publishing-the-website-on-github-pages" title="Permanent link">&para;</a></h2>
+<p>Enable GitHub Pages to make the website publicly accessible:
+1. Go to repository <strong>Settings</strong>.
+2. Select <strong>Pages</strong> from the menu.
+3. Under <strong>Build and deployment</strong>, select <strong>Deploy from a branch</strong>.
+4. Select <code>main</code> branch.</p>
+<p>You can find detailed instructions in the official <a href="https://docs.github.com/en/pages">GitHub Pages documentation</a>.
+GitHub saves your settings and builds the site. Check progress in the <strong>Actions</strong> tab as the first time make take a few minutes to complete.</p>
+<p>Once complete, your website will be available at:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://&lt;your-github-username&gt;.github.io
+</code></pre></div></p>
+<p>Repositories named <code>&lt;username&gt;.github.io</code> are <strong>user sites</strong>, published at the root GitHub Pages address. Each account can have one user site. Other repositories are <strong>project sites</strong>, published under the user site's URL.
+For example, a repository called:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>research-project
+</code></pre></div>
+<p>would be published at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://&lt;your-github-username&gt;.github.io/research-project/
+</code></pre></div>
+<p>For most academic personal websites, the user-site approach is simplest. It provides a clean URL, requires minimal setup, and is standard for personal academic sites.</p>
+<h2 id="alternative-build-locally-no-github-account-needed">Alternative: build locally (no GitHub account needed)<a class="headerlink" href="#alternative-build-locally-no-github-account-needed" title="Permanent link">&para;</a></h2>
+<p>The workflow above edits files on GitHub through the web interface, which is the easiest way, but requires a free account. If you'd rather not have an account, download the template and build locally. You only need an account to publish online.</p>
+<div class="admonition warning">
+<p class="admonition-title">You'll need to use the command line</p>
+<p>In Windows this will be Powershell, in MacOS or Linux this will be your Terminal.</p>
+</div>
+<p>This local route also has advantages even if you do have an account: it is faster when making many edits or experimenting with layouts, since you can preview changes instantly before pushing them.</p>
+<h3 id="get-the-template">Get the template<a class="headerlink" href="#get-the-template" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>No account:</strong> click <strong>Code</strong> → <strong>Download ZIP</strong> on the <a href="https://github.com/bristol-glaciology/example-jekyll-website">example repository</a>, then unzip on your computer.</li>
+<li>
+<p><strong>With an account:</strong> clone your fork instead, so you can push changes back and publish later:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your-github-username&gt;/&lt;your-github-username&gt;.github.io.git
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">cd</span><span class="w"> </span>&lt;your-github-username&gt;.github.io
+</code></pre></div>
+</li>
+</ul>
+<h3 id="install-ruby-and-jekyll">Install Ruby and Jekyll<a class="headerlink" href="#install-ruby-and-jekyll" title="Permanent link">&para;</a></h3>
+<p>Building the site on your own computer needs <strong>Ruby</strong> (the language Jekyll is written in) plus a couple of small build tools. There are two ways to get them — pick whichever suits you.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">With micromamba / conda</label><label for="__tabbed_1_2">With a native Ruby install</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>If you already use micromamba or conda — for example for the MkDocs or JupyterBook paths — this keeps everything in one place and works the same on every platform. Create an environment with Ruby and a compiler, then activate it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>micromamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>jekyll<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ruby<span class="w"> </span>cxx-compiler<span class="w"> </span>make
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>micromamba<span class="w"> </span>activate<span class="w"> </span>jekyll
+</code></pre></div>
+<p>Then install Jekyll and Bundler into it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>gem<span class="w"> </span>install<span class="w"> </span>bundler<span class="w"> </span>jekyll
+</code></pre></div>
+<p>Remember to run <code>micromamba activate jekyll</code> each time you open a new terminal to work on your site.</p>
+<div class="admonition note">
+<p class="admonition-title">Tested on macOS so far</p>
+<p>We've tested this route on macOS, where it works nicely. It should behave the same on Windows and Linux, but we haven't confirmed that yet. If anything misbehaves on the day, just switch to the native Ruby tab — or fall back to the no-install <a href="#two-ways-to-build-your-site">browser route</a>. Either way, let us know!</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>The conventional route is to follow the official Jekyll documentation:</p>
+<ul>
+<li><a href="https://jekyllrb.com/docs/installation/macos/"><strong>macOS</strong></a></li>
+<li><a href="https://jekyllrb.com/docs/installation/windows/"><strong>Windows</strong></a></li>
+<li><a href="https://jekyllrb.com/docs/installation/ubuntu/"><strong>Linux</strong></a></li>
+</ul>
+<p>Then install Jekyll and Bundler:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gem<span class="w"> </span>install<span class="w"> </span>jekyll<span class="w"> </span>bundler
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Now, from inside the website folder, install the site's own dependencies (the extra gems listed in its <code>Gemfile</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>bundle<span class="w"> </span>install
+</code></pre></div>
+<h3 id="start-the-local-server">Start the local server<a class="headerlink" href="#start-the-local-server" title="Permanent link">&para;</a></h3>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jekyll<span class="w"> </span>serve<span class="w"> </span>--livereload
+</code></pre></div>
+<p>Jekyll will build the site and start a local web server, usually available at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>http://localhost:4000
+</code></pre></div>
+<p>Open this address in your browser to preview the website. The server will automatically rebuild the site when you save changes to files.</p>
+<h3 id="push-changes-to-github">Push changes to GitHub<a class="headerlink" href="#push-changes-to-github" title="Permanent link">&para;</a></h3>
+<p>Once you are happy with the result, commit and push your changes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update website&quot;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>git<span class="w"> </span>push
+</code></pre></div>
+<p>GitHub Pages will then rebuild and publish the updated site online.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running the site locally requires additional software that is not needed for the GitHub web-GUI workflow described in this tutorial. If you only plan to make occasional edits to a personal website, working directly through GitHub is often the simpler option.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../hands-on/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7.1 Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7.1 Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../hands-on-mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Next: 7.3 MkDocs &amp; Material">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                7.3 MkDocs & Material
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; Bristol Glaciology Centre — <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/bristol-glaciology" target="_blank" rel="noopener" title="Bristol Glaciology Centre on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://bristol-glaciology.github.io" target="_blank" rel="noopener" title="Bristol Glaciology Centre website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
