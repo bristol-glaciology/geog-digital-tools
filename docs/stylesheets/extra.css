@@ -47,5 +47,16 @@
   --md-primary-fg-color--light: #005B6B;
   --md-primary-fg-color--dark:  #002B35;
   --md-accent-fg-color:         #005B6B;
-  --md-typeset-a-color:         #0097A7;
+  --md-typeset-a-color:         #4DD0E1;
+}
+
+/* In dark mode the --dark heading colour is near-black and invisible
+   against the slate background; use a light teal instead. */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5,
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #4DD0E1;
 }
