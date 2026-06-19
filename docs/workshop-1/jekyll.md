@@ -1,20 +1,18 @@
 # 3.3 Jekyll (Minimal Mistakes)
 
-[Jekyll](https://jekyllrb.com/) is a static site generator designed for simple, content-driven websites such as personal pages and blogs. It converts Markdown (`.md`) files into a complete static website using templates and configuration files.
+[Jekyll](https://jekyllrb.com/) converts Markdown files into static websites using templates and configuration. Paired with [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme, it provides a pre-built structure for personal sites, portfolios, and blogs. This comes with sensible defaults for navigation, posts, and layouts. For our purposes, it is likely the most popular and robust Jekyll theme available.
 
-A common pairing is the [Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/), which provides a pre-built structure for personal sites, portfolios, and blogs with sensible defaults for navigation, posts, and layouts. For our purposes, it is likely the most popular and robust Jekyll theme available.
-
-Examples of Jekyll in use include GitHub Pages personal blogs, academic homepages, and project documentation sites hosted directly from repositories. See the [tool comparison table](intro-static-sites.md#the-tools-we-cover-today) for when to use Jekyll versus MkDocs or JupyterBook.
+Jekyll runs on many personal academic sites. See the [tool comparison table](intro-static-sites.md#the-tools-we-cover-today) for when to use Jekyll versus MkDocs or JupyterBook.
 
 !!! note "Jekyll and GitHub Pages"
 
-    Jekyll is natively supported by GitHub Pages, which means sites can be built and hosted automatically from a GitHub repository without requiring a separate deployment pipeline (e.g. GitHub Actions).
+    GitHub Pages natively supports Jekyll, so sites build and deploy automatically from your repository with no separate pipeline (e.g. GitHub Actions).
 
 ## Getting Started with Jekyll and Minimal Mistakes
 
 !!! tip "Workshop shortcut"
 
-    For the hands-on session, we skip the from-scratch setup below and instead **fork a ready-made template** — a much faster path. Head to the [hands-on tutorial](hands-on-jekyll.md) when you are ready to build your site.
+    For the hands-on session, **fork a ready-made template** instead - much faster! See the [hands-on tutorial](hands-on-jekyll.md) when you are ready to build your website.
 
     The steps below are for those who want to understand how Jekyll works from the ground up, or who need to set up a project independently.
 

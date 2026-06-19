@@ -1,4 +1,4 @@
-# A minimal workflow to create a MkDocs site hosted by GitHub pages.
+# A minimal workflow to create a MkDocs site hosted by GitHub Pages
 
 !!! note "External Documentation"
 
@@ -8,9 +8,9 @@
     - [GitHub Pages](https://docs.github.com/en/pages)
 
 
-This page shows how to quickly create an example website using [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme, based on a template available on the [`bristol-glaciology` Github repository](https://github.com/bristol-glaciology/example-mkdocs-website). You can [view a preview of what the website looks like](https://bristol-glaciology.github.io/example-mkdocs-website/).
+This page shows how to create an example MkDocs site from a template on the [`bristol-glaciology` GitHub organisation](https://github.com/bristol-glaciology/example-mkdocs-website). [See a preview here.](https://bristol-glaciology.github.io/example-mkdocs-website/)
 
-!!! warning "Basic git and Python knowledge required"
+!!! warning "Basic git and Python knowledge recommended"
 
     This tutorial recommends a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
 
@@ -86,7 +86,7 @@ Once the fork has been created, you need a local copy on your computer.
 
 ### Installation
 
-Ensure the necessary dependencies are installed within your chosen Python environment:
+Install dependencies in your Python environment:
 
 ```bash
 conda create --name webdev
@@ -98,24 +98,24 @@ conda install -c conda-forge mkdocs-material mkdocs-jupyter
 
 ### The config file: `mkdocs.yml`
 
-The `mkdocs.yml` file is the primary config file. Go through it and edit the settings to your own taste - these should be self-explanatory, but you can find out more [in the material docs](https://squidfunk.github.io/mkdocs-material/creating-your-site/).
+The `mkdocs.yml` file is the primary config file. Edit the settings to your taste. See [Material docs](https://squidfunk.github.io/mkdocs-material/creating-your-site/) for details.
 
 ### Add pages and assets
 
-Add content (markdown files, jupyter notebook, and image assets) inside the `./docs` directory:
+Add content (markdown files, jupyter notebook, and image assets) (markdown files, jupyter notebook, and image assets) inside the `./docs` directory:
 
 - `docs/` - Documentation pages
   - `index.md` - Home page
   - `docs/pages/` - Additional pages
   - `docs/assets/` - Images and other assets
 
-Edit the `nav` section of `mkdocs.yml` to ensure that these are appropriately arranged within the site and navbar.
+Edit the `nav` section of `mkdocs.yml` to arrange pages in the site and navbar.
 
 ## Building and Pushing
 
 ### Running Locally
 
-To build and serve the site locally:
+Build and serve the site locally:
 
 ```bash
 mkdocs serve --livereload

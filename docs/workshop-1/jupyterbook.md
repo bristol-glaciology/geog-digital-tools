@@ -1,18 +1,22 @@
 # 3.2 JupyterBook & MyST
 
-[JupyterBook](https://jupyterbook.org/) is a documentation engine specifically tailored to technical and scientific content — code documentation, textbooks, or lecture notes. As the name suggests, it is particularly useful for translating `.ipynb` Jupyter Notebook documents into web pages with no effort on the part of the user. It also accepts LaTeX `.tex` files, and can export your content to a `.pdf` as well as a website.
+[JupyterBook](https://jupyterbook.org/) is a documentation engine for technical and scientific content—code documentation, textbooks, lecture notes. It converts Jupyter Notebooks (`.ipynb`) directly to web pages, and also supports LaTeX (`.tex`) files. You can export content to PDF or website.
 
-As with most examples here, the [JupyterBook website itself](https://jupyterbook.org/) is the primary example of a JupyterBook site, but other examples include [maths-heavy online textbooks](https://notes.eecs245.org/), [online supporting content for written GeoAI textbooks](https://book.opengeoai.org/), or [online working groups for the geoscience community](https://projectpythia.org/).
+Examples:
+- [JupyterBook's own site](https://jupyterbook.org/)
+- [math-heavy textbooks](https://notes.eecs245.org/)
+- [GeoAI textbooks](https://book.opengeoai.org/)
+- [geoscience working groups](https://projectpythia.org/).
 
 !!! note "Jupyter Book v1 (Sphinx) vs v2 (MyST)"
 
     [Jupyter Book v2](https://jupyterbook.org/) was released in November 2025. Prior to this [Jupyter Book v1](https://jupyterbook.org/v1/intro.html) was the default. v1 was based around [the Sphinx documentation tool](workshop-1/sphinx). v2 is based around the [MyST](https://mystmd.org/) (Markedly Structured Text) engine (in fact, the two are [basically the same thing](https://jupyterbook.org/community/ecosystem/)). 
     
-    Ultimately, the underlying rendering engine is something the user rarely needs to think about. The only reason to keep the move to v2/MyST in mind is that many online tutorials (and hallucinatory LLM output!) will still be referencing Sphinx-style setup and language. There is, in our opinion, [no reason to learn v1/Sphinx at this point](sphinx.md) (although, if you have a project already using it, there is also no compelling reason to move away from it).
+    For users, the underlying engine rarely matters. Many online tutorials (and hallucinatory LLMs) still reference Sphinx (v1), but there is [no reason to learn v1 now](sphinx.md). If you have an existing v1 project, stay with it.
 
 ## Getting Started with JupyterBook
 
-The [JupyterBook documentation](https://jupyterbook.org/stable/get-started/) is very good, but we outline a streamlined version of the workflow is available here:
+The [official JupyterBook documentation](https://jupyterbook.org/stable/get-started/) is excellent. Here's a streamlined workflow:
 
 ### 1. Install JupyterBook
 

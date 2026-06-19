@@ -1,22 +1,19 @@
 # 2. Writing content: Markdown and Notebooks
 
-The static website generators explored in this workshop are designed to create pages from very basic document building blocks: namely [Markdown](https://www.markdownguide.org/) for text documents (as well as images, tables, etc.) and [Jupyter Notebooks](https://jupyter.org/) for code.
+Static site generators convert two basic formats into web pages: [Markdown](https://www.markdownguide.org/) for text and [Jupyter Notebooks](https://jupyter.org/) for code.
 
 We will break this down into two halves: writing pure text using Markdown, and managing code workflows with Jupyter Notebooks.
 
 ## 1: Writing with Markdown
 
 If you have ever formatted a text file or written a `README` file on GitHub, you have likely already encountered Markdown.
+Markdown is a lightweight markup language created in 2004. Unlike Word (`.docx`) which hides complex XML styling code under the hood, Markdown files are plain text (`.md`) with simple characters for formatting: `#` for headings, `**bold**` for bold, etc. Markdown files are just plain text identical to any `.txt` file, just with a different file extension (`.md`) to communicate that Markdown is being used.
 
-Markdown is a lightweight, human-readable "markup language" created in 2004. Unlike Microsoft Word (`.docx`), which hides complex XML styling code under the hood, Markdown files are just plain text identical to any `.txt` file, just with a different file extension (`.md`) to communicate that Markdown is being used.
-
-Unlike more complex marksup languages (e.g. XML, HTML, LaTeX, etc...) Markdown is designed to be very easy-to-read. You use simple text characters to indicate semantic structure (like using `#` for a heading or `**bold text**` for bold text).
-
-Because it is plain text, Markdown files open instantly, never become corrupted due to software version changes, and work seamlessly a wide array of software and systems.
+It is human-readable, never corrupts with software version changes, and works across a wide array of software and systems.
 
 ### Basic Syntax
 
-The beauty of Markdown is that you can learn the basics in under five minutes. The best way to do this is to play around yourself using an online editor such as [markdownlivepreview.com](https://markdownlivepreview.com/), but some basic introductions are below. Paste them into a Markdown editor to see how they are visualised!
+Learn Markdown basics in under five minutes. Use [markdownlivepreview.com](https://markdownlivepreview.com/) to practice.
 
 ~~~markdown
 # Heading 1 (Your Chapter Title)
@@ -53,21 +50,20 @@ the Markdown document.
 
 ### Editing Software
 
-Because Markdown is plain text, you can technically write it in any application - such as Notepad or TextEdit. However, a Markdown-specific editor can help you preview the documentation live. This can be online, such as the barebones [markdownlivepreview](https://markdownlivepreview.com/) or [stackedit.io](https://stackedit.io/app#), through to slightly more full-featured offerings such as [HackMD](https://hackmd.io) or [GitHub's web editor](https://github.dev).
+Markdown is plain text, so any editor works. Dedicated Markdown editors help:
 
-There are also specialist Markdown desktop apps such as [Obdisian](https://obsidian.md/), but for those of you coming at this from a programming background, you might as well take advantage of the robust family of Markdown extension within the [VS Code IDE](https://code.visualstudio.com/) (the official recommended IDE of this workshop).
+- **Online:** [markdownlivepreview.com](https://markdownlivepreview.com/), [stackedit.io](https://stackedit.io/), [HackMD](https://hackmd.io), [GitHub's web editor](https://github.dev)
+- **Desktop:** [Obsidian](https://obsidian.md/), [VS Code](https://code.visualstudio.com/) (recommended for programmers)
 
 ### "Flavours"
 
-Standard Markdown is intentionally simple, which is also its primary limitation. Over time, different communities built "flavours" to extend what Markdown can do. This can result in slightly confusing situations where different editors, environments, or tools can support different features (such as super/subscripts, strikethrough, highlighting, etc.) in [different ways](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f).
+Standard Markdown is intentionally simple. Different communities built "flavours" to extend it. This can result in slightly confusing situations where different editors, environments, or tools can support different features (such as super/subscripts, strikethrough, highlighting, etc.) in [different ways](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f).
 
-Different static site generators will support different 'flavours' of Markdown:
+Some flavours are:
 
-- **Python-Markdown / Kramdown** (used by MkDocs, Jekyll) — good for documentation and web pages, but less suited to long-form academic writing with heavy cross-referencing.
-- **[MyST](https://mystmd.org/)** (used by JupyterBook) — the richest option for academic writing. Native support for citations via BibTeX, numbered and cross-referenced figures, equations, and theorem environments. Designed explicitly for scientific content.
-- **[Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)** (used by [Quarto](https://quarto.org)) — a similarly capable alternative, and the tool of choice in the R community. Pandoc can also convert your document to Word, PDF, or LaTeX if needed.
-
-As a result, whilst 90% of what you want to do with Markdown will be achievable with the basic syntax, you should always try and be aware of what additional syntax might be supported when writing Markdown files for specific tools.
+- **Python-Markdown / Kramdown** (MkDocs, Jekyll) — good for documnentation web pages, less suited to long-form academic writing and cross-referencing
+- **[MyST](https://mystmd.org/)** (JupyterBook) — richest for academic writing. Supports citations, numbered figures, equations, theorem environments
+- **[Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)** (Quarto) — similarly capable, preferred in the R community. Can export to Word, PDF, LaTeX
 
 !!! note "Extensions"
 
@@ -83,15 +79,13 @@ For instance, this very page is written in Markdown...
 
 ## 2: Writing with Jupyter Notebooks
 
-While Markdown is perfect for prose, websites academics want to produce often involve code, data analysis, modelling, and plotting. This is where [Jupyter Notebooks](https://jupyter.org/) (`.ipynb`) can provide real value for including code and code outputs.
+Markdown is perfect for prose. But research involves code, data analysis, modelling, and plots—where Jupyter Notebooks shine. If you are interested in this sort of thing, you are likely already familiar with Jupyter Notebooks - especially Python users (although Jupyter also supports languages like R and Julia).
 
-If you are interested in this sort of thing, you are likely already familiar with Jupyter Notebooks - especially Python users (although Jupyter also supports languages like R and Julia).
-
-If you already work with Jupyter Notebooks, you don't need an introduction to running them — the key thing for this workshop is knowing that some static site tools can take your existing `.ipynb` files and turn them directly into web pages, complete with rendered outputs. [This page](https://edu-notebooks.oggm.org/oggm-edu/glacier_water_resources.html) is an example of what that can look like.
+You can publish existing `.ipynb` files directly as web pages with rendered outputs. [This page](https://edu-notebooks.oggm.org/oggm-edu/glacier_water_resources.html) is an example of what that can look like.
 
 ### Quick Guide
 
-To create and run notebooks locally, you will want to install the broader Jupyter ecosystem. If you already have Python configured, you can install it alongside in your local environment:
+To create and run notebooks locally, install the Jupyter ecosystem. If you already have Python configured, you can install it alongside in your local environment:
 
 ```bash
 conda install jupyterlab

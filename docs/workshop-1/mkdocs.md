@@ -1,8 +1,8 @@
 # 3.1 MkDocs & Material
 
-[MkDocs](https://www.mkdocs.org/) is a fast, simple static site generator built around Markdown. Paired with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme — which is what almost everyone uses — it produces clean, professional-looking websites with a rich feature set out of the box: responsive design, built-in search, dark mode, syntax highlighting, and more.
+[MkDocs](https://www.mkdocs.org/) is a fast, simple static site generator for Markdown. Paired with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), the standard theme produces clean, professional websites with responsive design, built-in search, dark mode, and syntax highlighting out of the box.
 
-**This very site is built with MkDocs Material.** If you like what you see here, you can have the same thing running in under an hour.
+**This site runs on MkDocs Material.** If you like what you see here, you'll have it running in under an hour.
 
 !!! note "MkDocs vs Material"
 
@@ -10,13 +10,13 @@
 
 ## What is it good for?
 
-MkDocs works best for **documentation and project websites** — situations where content is organised into pages, navigation matters, and you want something that looks polished with minimal effort. See the [tool comparison table](intro-static-sites.md#the-tools-we-cover-today) for a fuller picture of when to use MkDocs versus JupyterBook or Jekyll.
+MkDocs works best for **documentation and project websites** where content is organized into pages and you want a polished look with minimal effort. See the [tool comparison table](intro-static-sites.md#the-tools-we-cover-today) for when to use MkDocs versus JupyterBook or Jekyll.
 
-It is less suited to: long-form books with heavy cross-referencing (use JupyterBook/MyST), or highly customised personal websites with unique layouts (use Jekyll).
+It's less suited to long-form books with heavy cross-referencing (use JupyterBook/MyST) or highly customized personal websites (use Jekyll).
 
 ## Getting started
 
-The [official documentation](https://squidfunk.github.io/mkdocs-material/getting-started/) covers everything, but the core workflow is:
+The [official documentation](https://squidfunk.github.io/mkdocs-material/getting-started/) covers everything. Here's the core workflow:
 
 ### 1. Install
 

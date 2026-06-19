@@ -1,8 +1,8 @@
 # Workshop 1: Open-source tools for outreach, teaching and research documentation
 
-Researchers and teachers often want to share their work online — whether that's a personal website, class notes, a book or project documentation — but don't know where to start.
+Learn free, open-source tools for publishing research and teaching online. No web development experience needed.
 
-This workshop introduces simple, free tools that make it easy to build professional-looking websites, with no web development experience required. The workshop is not meant to be a comprehensive class on web design, but is rather an opinionated introduction to tools we (and others!) use a lot, with demos and some hands-on time.
+We'll show you tools we actually use, with demos and hands-on practice. This workshop focuses on tools for researchers and teachers, not a comprehensive web design course.
 
 !!! tip "Registration / logistics"
 
@@ -22,13 +22,11 @@ This workshop introduces simple, free tools that make it easy to build professio
 
 ---
 
-## You should come if ...
-
-... you're interested in creating any of these:
+## You should come if you want to build any of these:
 
 - [Personal websites](https://trchudley.github.io)
 - [Research group websites](https://bristol-glaciology.github.io/)
-- [Class notes](https://fabienmaussion.info/climate_risks) or [online textbooks](https://trchudley.github.io/geospatial-python-glaciology/).
+- [Class notes](https://fabienmaussion.info/climate_risks) or [online textbooks](https://trchudley.github.io/geospatial-python-glaciology/)
 - [Tutorials](https://tutorials.oggm.org) or [software documentation](https://pdemtools.readthedocs.io)
 - [Educational platforms](https://edu.oggm.org)
 - and more!
@@ -41,7 +39,7 @@ We expect the workshop to be most beneficial for PGRs and ECRs, but everyone is 
 
 ### Part 1 — Static websites (13:30–15:00)
 
-The purpose of part 1 is to provide a general overview of a family of tools which are all very similar in concept (turning written content and images into websites), and to help you choose the right tool for your needs.
+Explore tools that turn written content and images into websites. We'll help you choose the right tool for your needs.
 
 1. [A quick intro to static site generators](intro-static-sites.md)
 2. [Writing content: Markdown and Notebooks](markdown-and-notebooks.md)

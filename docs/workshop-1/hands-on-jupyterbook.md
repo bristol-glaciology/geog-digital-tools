@@ -1,20 +1,18 @@
-# A minimal workflow to create a Jupyter Book site hosted by GitHub pages.
-
+# A minimal workflow to create a Jupyter Book site hosted by GitHub Pages
 
 !!! note "External Documentation"
 
-    This page aims to provide a streamlined tutorial for GitHub Pages and Jupyter Book. Full documentation is available online:
-   
+    Full documentation:
     - [Jupyter Book](https://jupyterbook.org/stable/get-started/)
     - [GitHub Pages](https://docs.github.com/en/pages)
 
-This page shows how to quickly create an example website using [Jupyter Book](https://jupyterbook.org/) with the [MyST engine](https://mystmd.org/), based on a template available on the [`bristol-glaciology` Github repository](https://github.com/bristol-glaciology/example-jupyterbook-website). You can [view a preview of what the website looks like](https://bristol-glaciology.github.io/example-jupyterbook-website/).
+This page shows how to create an example Jupyter Book site from a template on the [`bristol-glaciology` GitHub organisation](https://github.com/bristol-glaciology/example-jupyterbook-website). [See a preview here.](https://bristol-glaciology.github.io/example-jupyterbook-website/)
 
 !!! warning "Basic git and Python knowledge required"
 
-    This tutorial recommends a GitHub account and a working knowledge of how to interact with `git` and GitHub repos. If you are less experienced with these workflows, you may wish to explore the [introductory documentation](https://docs.github.com/en/get-started/start-your-journey/hello-world) or work with [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) as a GUI-only alternative. For today, the [Jekyll personal website guide](hands-on-jekyll.md) can be done through the GitHub web GUI and does not require any `git` or command-line interactions.
-
-    You will also need to know how to setup a Python environment, but you do not need to know how to code in Python.
+    This tutorial recommends a GitHub account and familiarity with `git` and GitHub repos. If you're less experienced, try the [GitHub docs introduction](https://docs.github.com/en/get-started/start-your-journey/hello-world) or [GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop).
+    
+    For now, the [Jekyll guide](hands-on-jekyll.md) works entirely through the GitHub web GUI with no git or command line.
 
 ## Getting the website
 
@@ -60,24 +58,15 @@ This page shows how to quickly create an example website using [Jupyter Book](ht
 
 ### Downloading the repository locally
 
-Once the fork has been created, you need a local copy on your computer.
-
-1. Open your fork on GitHub.
-
-2. Click the green **Code** button.
-
-3. Copy the repository URL (HTTPS or SSH).
-
-4. Open a terminal and navigate to the directory where you want to store the project.
-
-5. Clone the repository:
-
+1. Open your fork on GitHub
+2. Click **Code** (green button)
+3. Copy the repository URL (HTTPS or SSH)
+4. In a terminal, navigate to where you want the project
+5. Clone it:
     ```bash
     git clone https://github.com/<your-github-username>/<repository-name>.git
     ```
-
-6. Move into the project directory:
-
+6. Move into the directory:
     ```bash
     cd <repository-name>
     ```
@@ -86,7 +75,7 @@ Once the fork has been created, you need a local copy on your computer.
 
 ### Installation
 
-Ensure the necessary dependencies are installed within your chosen Python environment:
+Install dependencies in your Python environment:
 
 ```bash
 conda create --name webdev
@@ -102,11 +91,13 @@ Open the newly generated `myst.yml` file in a text editor. This single file cont
 
 ### Add pages and assets
 
-Create files directly in your project directory. JupyterBook [natively supports](https://jupyterbook.org/stable/authoring/file-types/) regular Markdown (`.md`), Jupyter Notebooks (`.ipynb`), and LaTeX (`.tex`). [MyST-style Markdown](https://jupyterbook.org/stable/authoring/mystmd/) adds further capability, including native support for [LaTeX-style mathematical equations](https://jupyterbook.org/stable/authoring/math/). As your project grows, organise content into folders and keep images in a dedicated assets directory.
+Create files directly in your project directory. Jupyter Book supports [Markdown (`.md`), Jupyter Notebooks (`.ipynb`), and LaTeX (`.tex`)](https://jupyterbook.org/stable/authoring/file-types/). [MyST-style Markdown](https://jupyterbook.org/stable/authoring/mystmd/) adds support for equations, citations, and more.
 
-To organise the structure, you can edit the table of contents in your `myst.yml` file. Use the `toc:` section to define the structure, titles, and nested sections:
+Organize content in folders as your project grows and keep images in a dedicated assets directory.
 
-~~~yaml
+Edit the `toc:` section in `myst.yml` to define structure, titles, and nested sections.
+
+```yaml
 project:
   toc:
     - file: docs/index.md
@@ -117,7 +108,7 @@ project:
     - title: Part II - Advanced
       children:
         - file: docs/part2/advanced.md
-~~~
+```
 
 
 ## Building and Pushing
@@ -126,29 +117,27 @@ project:
 
 Launch the built-in development server to view the site on your computer. It creates a local web server that automatically live-updates in your browser whenever you modify a file:
 
-~~~bash
+```bash
 jupyter book start
-~~~
+```
 
 JupyterBook will report the URL at which it can be found (e.g. `http://localhost:3000`).
 
 ### Export a PDF
 
-To generate a print copy (for class notes or textbooks):
+To generate a print copy for class notes or textbooks:
 
-~~~bash
+```bash
 jupyter book build --pdf
-~~~
+```
 
 ### Publish to GitHub Pages (optional, requires a GitHub account)
 
-Publishing your site online requires a GitHub account: you must have **forked** the template (rather than downloaded the ZIP) so that you have a repository to deploy from.
+Deploy to GitHub Pages:
 
-To deploy to GitHub Pages:
-
-~~~bash
+```bash
 jupyter book init --gh-pages
-~~~
+```
 
 Answer the prompted questions; this will create a `.github/workflows/deploy.yml` file. 
 
